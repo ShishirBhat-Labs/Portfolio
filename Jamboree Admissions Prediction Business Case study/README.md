@@ -1,4 +1,5 @@
-# 🎓 Graduate Admission Prediction — Jamboree Case Study
+# 🎓 Graduate Admission Prediction — Jamboree Business Case Study
+# 📈 Machine learning - Linear Regression
 
 <p align="center">
   <img src="assets/hero.png" alt="Banner" width="80%"/>
@@ -92,21 +93,9 @@ jamboree-admission-prediction/
 │   ├── Jamboree_Analysis.ipynb            # Complete analysis notebook
 │   └── Jamboree_Analysis.pdf              # PDF export for easy viewing
 │
-│
-├── results/
-│   ├── visualizations/
-│   │   ├── correlation_heatmap.png
-│   │   ├── feature_importance.png
-│   │   ├── model_performance.png
-│   │   └── residual_analysis.png
-│   └── reports/
-│       ├── business_insights.md           # Actionable recommendations
-│       └── statistical_summary.md         # Detailed statistical results
-│
 ├── assets/
 │   ├── hero.png                          # README banner
 │
-├── requirements.txt                       # Python dependencies
 ├── README.md                             # Project documentation
 └── .gitignore                           # Git ignore rules
 ```
