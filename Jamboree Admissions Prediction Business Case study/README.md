@@ -1,7 +1,6 @@
 # 🎓 Graduate Admission Prediction — Jamboree Business Case Study
 # 📈 Machine learning - Linear Regression
 
----
 
 ## 📌 Context
 
