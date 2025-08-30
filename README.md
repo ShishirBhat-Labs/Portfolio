@@ -141,7 +141,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 
 **⭐ Star this repository if you find it helpful!**
 
-<img src="https://komarev.com/ghpvc/?username=yourusername&color=4CAF50&style=flat-square&label=Portfolio+Views" />
+<img src="https://komarev.com/ghpvc/?username=ShishirBhat-Labs&color=4CAF50&style=flat-square&label=Portfolio+Views" />
 
 </div>
 
