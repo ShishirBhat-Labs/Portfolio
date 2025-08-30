@@ -1,7 +1,12 @@
-# 🎓 Graduate Admission Prediction — Jamboree Business Case Study
+<div align="center">
+
+# 🎓 Jamboree Business Case Study - Graduate Admission Prediction
 # 📈 Machine learning - Linear Regression
 
+</div>
+
 <p align="center">
+  
   <img src="assets/hero.png" alt="Project banner" width="75%" />
 </p>
 
