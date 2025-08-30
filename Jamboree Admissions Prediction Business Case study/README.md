@@ -1,6 +1,9 @@
 # 🎓 Graduate Admission Prediction — Jamboree Business Case Study
 # 📈 Machine learning - Linear Regression
 
+<p align="center">
+  <img src="assets/hero.png" alt="Project banner" width="75%" />
+</p>
 
 ## 📌 Context
 
@@ -196,6 +199,17 @@ jupyter notebook notebooks/Jamboree_Analysis.ipynb
 
 ---
 
+## 📈 Repo structure
+
+
+├── assets/
+├── Notebook and Report/
+│   ├── Jamboree admission prediction case study.ipynb          # Jupyter notebooks
+│   └── Jamboree admission prediction case study.pdf            # Project reports
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
 
 ⭐ **If this project helped you understand graduate admission analytics, please star the repository!** ⭐
 
