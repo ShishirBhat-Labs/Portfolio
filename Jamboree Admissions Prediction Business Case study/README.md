@@ -13,6 +13,10 @@ Recently, Jamboree launched a **Graduate Admission Probability Feature** 🎯 on
 
 ---
 
+Report link - [IPYNB](https://github.com/ShishirBhat-Labs/Portfolio/blob/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study/Notebook/Jamboree%20admission%20prediction%20case%20study.ipynb) , [PDF](https://github.com/ShishirBhat-Labs/Portfolio/blob/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study/Report/Jamboree%20admission%20prediction%20case%20study.pdf)
+
+---
+
 ## 🎯 Project Objectives
 
 - **Predict graduate school admission chances** with high accuracy using machine learning
