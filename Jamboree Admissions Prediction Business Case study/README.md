@@ -83,25 +83,6 @@ Recently, Jamboree launched a **Graduate Admission Probability Feature** 🎯 on
 
 ---
 
-## 📁 Repository Structure
-
-```
-jamboree-admission-prediction/
-│
-│
-├── notebooks/
-│   ├── Jamboree_Analysis.ipynb            # Complete analysis notebook
-│   └── Jamboree_Analysis.pdf              # PDF export for easy viewing
-│
-├── assets/
-│   ├── hero.png                          # README banner
-│
-├── README.md                             # Project documentation
-└── .gitignore                           # Git ignore rules
-```
-
----
-
 ## 🛠 Technical Implementation
 
 ### **Data Processing Pipeline**
