@@ -34,7 +34,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 <tr>
 <td width="50%" align="center">
 
-### 🎓 [Jamboree Education Analytics](./jamboree-ml-regression/)
+### 🎓 [Jamboree Education Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study)
 **Graduate Admission Prediction & Success Factor Analysis**
 
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
@@ -45,7 +45,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 
 **Business Value:** Student guidance optimization, admission success prediction
 
-📊 [View Project](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study) | 📓 [Notebook](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study/Notebook%20and%20Report)  
+📓 [Notebook](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study/Notebook%20and%20Report)  
 
 </td>
 <td width="50%" align="center">
