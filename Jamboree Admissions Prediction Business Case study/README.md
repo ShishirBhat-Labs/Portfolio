@@ -216,6 +216,7 @@ jupyter notebook notebooks/Jamboree_Analysis.ipynb
 ├── LICENSE
 ├── README.md
 └── requirements.txt
+└── Sample_Data.png
 ```
 
 ⭐ **If this project helped you understand graduate admission analytics, please star the repository!** ⭐
