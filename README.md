@@ -40,10 +40,25 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
 <img src="https://img.shields.io/badge/ML-Logistic Regression-red?style=flat-square" />
 
-**Tech Stack:** Python • Sk-learn • Pandas • Statistical Analysis • EDA  • ML  
-**Key Insights:** GRE/TOEFL score impact, university rating correlation, admission probability modeling  
+---
 
-**Business Value:** Student guidance optimization, admission success prediction
+<div align="center"><strong>Tech Stack:</strong></div>
+Python • EDA • Sk-learn • Pandas • Feature Engineering • Statistical Analysis • ML • Linear Regression • GD Optimisation
+
+<br>
+<br>
+
+<div align="center"><strong>Key insight:</strong></div>
+GRE/TOEFL score impact, university rating correlation, admission probability modeling  
+
+<br>
+<br>
+
+<div align="center"><strong>Business Value:</strong></div>
+Student guidance optimization, admission success prediction
+
+<br>
+<br>
 
 📓 [Notebook](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study/Notebook%20and%20Report)  
 
@@ -86,9 +101,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 
 ## 📊 **Project Methodology**
 
-<table>
-<tr>
-<td width="50%">
+
 
 ### 🔬 **Analytical Approach**
 1. **Business Understanding** - Define problem & success metrics
@@ -98,8 +111,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 5. **Model Development** - Algorithm selection & optimization
 6. **Business Translation** - Actionable insights & recommendations
 
-</td>
-<td width="50%">
+
 
 ### 📋 **Documentation Standards**
 - **Clear Problem Statements** with business context
@@ -109,9 +121,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 - **Business Impact Summary** with quantified results
 - **Reproducible Code** with requirements.txt
 
-</td>
-</tr>
-</table>
+
 
 ---
 
@@ -131,7 +141,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 
 ## 🔄 **Portfolio Updates**
 
-- **Latest Update:** - Added samsung galaxy watch sleep analysis
+- **Latest Update:** - Adding samsung galaxy watch sleep analysis
 - **Next Addition:** Deep learning projects from ongoing DSML specialization
 - **Coming Soon:** MLOps pipeline implementation case study
 
