@@ -1,9 +1,6 @@
-
-<div align="center">
-<h1><b> 📊 Data Science & Analytics Portfolio </b></h1>
-</div>
-
-
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=12,20,14,25,17&height=200&section=header&text=Shishir%20Bhat&fontSize=50&fontColor=fff&animation=twinkling&fontAlignY=35&desc=PORTFOLIO" />
+</p>
 <p align="center">
   <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=30&pause=1000&color=4CAF50&center=true&vCenter=true&width=800&lines=Data+Science+Portfolio;Analytics+%7C+Machine+Learning+%7C+Insights;Real-World+Problem+Solving" alt="Typing SVG" />
 </p>
@@ -18,16 +15,22 @@
 
 </div>
 
----
+<br>
 
-## 🎯 **About This Portfolio**
+<div align="center">
+  <h2> 👨‍💻 About This Portfolio </h2>
+</div>
+
 
 Welcome to my data science portfolio! This repository showcasing my skills, projects, and continuous learning journey in Data Analytics and Data Science. From raw data to actionable insights - documenting every step of turning numbers into stories that matter.
 > **🚀 Quick Navigation:** Each project includes detailed notebooks, clear documentation, and actionable business insights.
 
----
 
-## 📈 **Featured Projects**
+<br>
+
+<div align="center">
+  <h2> 📈 Featured Projects </h2>
+</div>
 
 
 <table>
@@ -40,7 +43,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
 <img src="https://img.shields.io/badge/ML-Logistic Regression-red?style=flat-square" />
 
----
+
 
 <div align="center"><strong>Tech Stack:</strong></div>
 Python • EDA • Sk-learn • Pandas • Feature Engineering • Statistical Analysis • ML • Linear Regression • GD Optimisation
@@ -82,7 +85,11 @@ Student guidance optimization, admission success prediction
 </tr>
 </table>
 
-## 🛠️ **Technical Skills Demonstrated**
+<br>
+
+<div align="center">
+  <h2> 🛠️ Technical Skills Demonstrated </h2>
+</div>
 
 <div align="center">
 
@@ -97,9 +104,12 @@ Student guidance optimization, admission success prediction
 
 </div>
 
----
 
-## 📊 **Project Methodology**
+<br>
+
+<div align="center">
+  <h2> 📊 Project Methodology </h2>
+</div>
 
 
 
@@ -123,29 +133,20 @@ Student guidance optimization, admission success prediction
 
 
 
----
+<br>
 
-## 🚀 **How to Explore This Portfolio**
+<div align="center">
+  <h2> 🔄 Portfolio Updates </h2>
+</div>
 
-### 👩‍💻 **For Technical Review:**
-1. **Code Quality:** All notebooks include detailed comments and clear methodology
-2. **Reproducibility:** Each project has requirements.txt and setup instructions
-3. **Best Practices:** Following industry standards for data science workflows
-
-### 📊 **For Business Stakeholders:**
-1. **Executive Summaries:** Each project includes business impact summary
-2. **Visual Insights:** Clear, actionable visualizations with business context
-3. **ROI Focus:** Quantified business value and implementation recommendations
-
----
-
-## 🔄 **Portfolio Updates**
 
 - **Latest Update:** - Adding samsung galaxy watch sleep analysis
 - **Next Addition:** Deep learning projects from ongoing DSML specialization
 - **Coming Soon:** MLOps pipeline implementation case study
 
----
+<br>
+<br>
+
 
 <div align="center">
 
