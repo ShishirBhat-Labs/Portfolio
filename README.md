@@ -38,11 +38,16 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 <td width="50%" align="center">
 
 ### 🎓 [Jamboree Education Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study)
+
+<br>
+
 **Graduate Admission Prediction & Success Factor Analysis**
 
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
 <img src="https://img.shields.io/badge/ML-Logistic Regression-red?style=flat-square" />
 
+<br>
+<br>
 
 
 <div align="center"><strong>Tech Stack:</strong></div>
@@ -59,11 +64,6 @@ GRE/TOEFL score impact, university rating correlation, admission probability mod
 
 <div align="center"><strong>Business Value:</strong></div>
 Student guidance optimization, admission success prediction
-
-<br>
-<br>
-
-📓 [Notebook](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study/Notebook%20and%20Report)  
 
 </td>
 <td width="50%" align="center">
