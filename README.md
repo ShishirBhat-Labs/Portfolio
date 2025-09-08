@@ -18,7 +18,7 @@
 <br>
 
 <div align="center">
-  <h2> 👨‍💻 About This Portfolio </h2>
+  <h2> 👨‍💻 About This Repo </h2>
 </div>
 
 
