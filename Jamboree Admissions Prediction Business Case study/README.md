@@ -139,12 +139,20 @@ Hyperparameter Tuning → Cross-Validation → Statistical Testing → Deploymen
 | **Cross-Val R²** | 0.8178 ± 0.020 | **0.8189 ± 0.019** | 0.8176 ± 0.021 | 0.8089 ± 0.023 |
 | **Production Ready** | ✅ | **✅ Winner** | ✅ | ✅ |
 
+<p align="center">
+  <img src="assets/r2_score.png" alt="R2 Score Comparison" width="75%" />
+</p>
+
 ### **Key Predictive Insights**
 1. **CGPA Dominance:** 88% correlation - strongest single predictor of admission success
 2. **Standardized Test Critical Mass:** GRE (81%) + TOEFL (79%) form core evaluation metrics  
 3. **Research Experience Game-Changer:** Provides 15.5 percentage point admission boost
 4. **Profile Quality Matters:** SOP + LOR combination significantly influences final decisions
 5. **University Rating Surprising:** Lower independent impact than expected (69% correlation)
+
+<p align="center">
+  <img src="assets/model_comparison.png" alt="Feature Importance for different Models" width="75%" />
+</p>
 
 ### **Business Value Delivered**
 
