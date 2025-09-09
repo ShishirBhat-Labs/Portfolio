@@ -66,7 +66,6 @@ Hyperparameter Tuning → Cross-Validation → Statistical Testing → Deploymen
 - **Linear Regression:** Baseline model for interpretability
 - **Lasso Regression (α=0.001):** L1 regularization for automatic feature selection
 - **Ridge Regression (α=0.0001):** L2 regularization to handle multicollinearity
-- **Gradient Boosting & Random Forest:** Ensemble methods for comparison
 
 ### **4. Validation Framework**
 - **80-20 Train-Test Split** with stratified sampling
