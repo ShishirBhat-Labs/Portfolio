@@ -1,6 +1,6 @@
 <div align="center">
 
-<h1><b>🎓 Graduate Admission Prediction — Jamboree Business Case Study</b></h1>
+<h1><b>Graduate Admission Prediction — Jamboree Business Case Study</b></h1>
 <h2><b>Machine Learning | Predictive Analytics | Ed Tech</b></h2>
 
 </div>
