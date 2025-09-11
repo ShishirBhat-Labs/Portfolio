@@ -25,11 +25,45 @@
 This project develops a **machine learning-powered admission prediction system** for Jamboree Education, a leading test preparation company helping students secure admissions to top global universities. The solution predicts graduate school admission probabilities with **82% accuracy**, enabling data-driven counseling and strategic planning for both students and educational consultants.
 
 **Key Achievements:**
-- Built production-ready ML model with 82% R² accuracy and 6.1% RMSE
+- Built an ML model with 82% R² accuracy and 6.1% RMSE
 - Identified CGPA as the strongest predictor (88% correlation with admission chances)
 - Discovered research experience provides 15.5% admission probability boost
 
 ---
+
+## 💻 Specific Skills & Tools Utilized
+
+### **Programming & Data Science**
+- **Python 3.7+** - Core programming language
+- **Pandas & NumPy** - Data manipulation and numerical computing
+- **Scikit-learn** - Machine learning algorithms and model evaluation
+- **Statsmodels** - Advanced statistical analysis and OLS regression
+
+### **Data Visualization & Analysis**
+- **Matplotlib & Seaborn** - Statistical visualizations and publication-quality plots
+- **Scipy** - Statistical testing and hypothesis validation
+- **Jupyter Notebooks** - Interactive development and analysis documentation
+
+### **Machine Learning Techniques**
+- **Regression Analysis** - Linear, Lasso, Ridge, and advanced ensemble methods
+- **Feature Engineering** - Composite score creation and categorical encoding
+- **Cross-Validation** - K-fold validation for robust model assessment
+- **Hyperparameter Tuning** - Grid search optimization for model performance
+
+### **Statistical Analysis**
+- **Correlation Analysis** - Pearson correlation and feature relationship mapping
+- **Variance Inflation Factor (VIF)** - Multicollinearity detection and handling
+- **Residual Analysis** - Model assumption validation and diagnostic testing
+- **Confidence Intervals** - Statistical significance and prediction uncertainty
+
+### **Software Engineering Practices**
+- **Git Version Control** - Code versioning and collaborative development
+- **Model Serialization** - Joblib for production model deployment
+- **Documentation** - Comprehensive README and code documentation
+- **Testing Framework** - Structured approach to model validation
+
+---
+
 
 ## 🎯 Business Problem
 
@@ -75,38 +109,6 @@ Hyperparameter Tuning → Cross-Validation → Statistical Testing → Deploymen
 
 ---
 
-## 💻 Specific Skills & Tools Utilized
-
-### **Programming & Data Science**
-- **Python 3.7+** - Core programming language
-- **Pandas & NumPy** - Data manipulation and numerical computing
-- **Scikit-learn** - Machine learning algorithms and model evaluation
-- **Statsmodels** - Advanced statistical analysis and OLS regression
-
-### **Data Visualization & Analysis**
-- **Matplotlib & Seaborn** - Statistical visualizations and publication-quality plots
-- **Scipy** - Statistical testing and hypothesis validation
-- **Jupyter Notebooks** - Interactive development and analysis documentation
-
-### **Machine Learning Techniques**
-- **Regression Analysis** - Linear, Lasso, Ridge, and advanced ensemble methods
-- **Feature Engineering** - Composite score creation and categorical encoding
-- **Cross-Validation** - K-fold validation for robust model assessment
-- **Hyperparameter Tuning** - Grid search optimization for model performance
-
-### **Statistical Analysis**
-- **Correlation Analysis** - Pearson correlation and feature relationship mapping
-- **Variance Inflation Factor (VIF)** - Multicollinearity detection and handling
-- **Residual Analysis** - Model assumption validation and diagnostic testing
-- **Confidence Intervals** - Statistical significance and prediction uncertainty
-
-### **Software Engineering Practices**
-- **Git Version Control** - Code versioning and collaborative development
-- **Model Serialization** - Joblib for production model deployment
-- **Documentation** - Comprehensive README and code documentation
-- **Testing Framework** - Structured approach to model validation
-
----
 
 ## 📊 Dataset Overview
 
