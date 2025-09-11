@@ -1,9 +1,13 @@
 <div align="center">
 
-<h1><b>Digital Banking Credit Underwriter — AI-Powered Risk Assessment Engine</b></h1>
+<h1><b>LoanTap Credit Underwriter - Risk Assessment Engine</b></h1>
 <h2><b>Financial Services | Credit Risk Modeling | Banking Technology</b></h2>
 
 </div>
+
+<p align="center">
+  <img src="assets/hero.png" alt="Graduate Admission Prediction Banner" width="75%" />
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/Model-Logistic%20Regression-blue" alt="Model Badge"/>
@@ -253,28 +257,7 @@ class LoanTapRiskEngine:
 ## 🔧 Repository Structure & Quick Start
 
 ```
-LoanTap-Credit-Risk-Assessment/
-├── data/
-│   ├── raw/
-│   │   └── logistic_regression.csv
-│   └── processed/
-├── notebooks/
-│   ├── 01_EDA_and_preprocessing.ipynb
-│   ├── 02_model_development.ipynb
-│   └── 03_business_insights.ipynb
-├── src/
-│   ├── data_preprocessing.py
-│   ├── feature_engineering.py
-│   ├── model_training.py
-│   └── prediction_engine.py
-├── models/
-│   ├── loantap_logistic_model.pkl
-│   └── feature_scaler.pkl
-├── reports/
-│   └── LoanTap_Risk_Assessment_Report.pdf
-├── requirements.txt
-├── README.md
-└── .gitignore
+
 ```
 
 ### **Quick Start Commands:**
