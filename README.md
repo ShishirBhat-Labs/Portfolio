@@ -33,18 +33,20 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 </div>
 
 
+
+
 <table>
 <tr>
-<td width="50%" align="center">
+<td width="33%" align="center" valign="top">
 
-### 🎓 [Jamboree Education Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study)
+### [Jamboree Admissions Predictor](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study)
 
 <br>
 
 **Graduate Admission Prediction & Success Factor Analysis**
 
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
-<img src="https://img.shields.io/badge/ML-Logistic Regression-red?style=flat-square" />
+<img src="https://img.shields.io/badge/ML-Linear Regression-red?style=flat-square" />
 
 <br>
 <br>
@@ -66,7 +68,35 @@ GRE/TOEFL score impact, university rating correlation, admission probability mod
 Student guidance optimization, admission success prediction
 
 </td>
-<td width="50%" align="center">
+
+
+<td width="33%" align="center";vertical-align: top>
+
+### [LoanTap Credit Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter%20-%20Risk%20Assessment%20Engine)
+
+<br>
+
+**Credit Risk Modeling & Default Prediction**
+
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
+<img src="https://img.shields.io/badge/ML-Logistic Regression-red?style=flat-square" />
+<br>
+<br>
+<div align="center"><strong>Tech Stack:</strong></div>
+Python • EDA • Sk-learn • Pandas • Feature Engineering • Statistical Analysis • ML • Logistic Regression • NumPy • Risk Analytics • StandardScaler • Cross-Validation
+<br>
+<br>
+<div align="center"><strong>Key Insights:</strong></div>
+Geographic location dominates default prediction, Grade-based risk validation, Income verification reduces default by 15%
+<br>
+<br>
+<div align="center"><strong>Business Value:</strong></div>
+Automated underwriting decisions, 60% operational cost reduction, Risk-based pricing optimization
+
+</td>
+
+
+<td width="33%" align="center">
 
 ### 🚀 [More Projects Coming Soon...]
 **Currently Working On:**
