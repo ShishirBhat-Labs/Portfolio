@@ -29,7 +29,7 @@
 This project develops a **sophisticated credit risk assessment system** for LoanTap, a leading digital lending platform targeting millennials. The solution predicts loan default probability with **90.6% AUC accuracy**, enabling data-driven underwriting decisions that balance growth with risk management for their personal loan portfolio.
 
 **Key Achievements:**
-- Built ML model achieving 90.6% ROC AUC with 94.5% precision in loan approvals
+- Built ML model using Logistic Regression achieving 90.6% ROC AUC with 94.5% precision in loan approvals
 - Analyzed 396,030 loan records to identify key default risk factors
 - Discovered geographic location as the strongest predictor of default risk
 - Implemented scalable risk-based pricing and approval framework
@@ -120,13 +120,39 @@ Threshold Optimization → Business Rule Implementation → Deployment
 **Timeline:** Multi-year historical lending data  
 **Target:** Binary classification (Fully Paid vs Charged Off)
 
-| Feature Category | Key Variables | Business Impact | Missing Data |
-|------------------|---------------|-----------------|--------------|
-| **Loan Attributes** | Amount, Interest Rate, Term, Grade | Direct pricing impact | 0% |
-| **Borrower Demographics** | Employment, Income, Home Ownership | Risk segmentation | <5% |
-| **Credit History** | DTI, Credit Lines, Public Records | Core underwriting | <1% |
-| **Geographic** | Address → State/Zipcode | **Strongest predictors** | 0% |
-| **Verification Status** | Income/Employment Verification | Risk mitigation | 0% |
+
+
+| **Column Name**         | **Description** |
+|--------------------------|-------------------------------------------------------------------------------------------------------------------------|
+| loan_amnt               | The listed amount of the loan applied for. If reduced by LoanTap’s credit department, the reduced amount is shown. |
+| term                    | The number of payments on the loan. Values: **36** or **60** months. |
+| int_rate                | Interest rate on the loan. |
+| installment             | Monthly payment owed by the borrower if the loan originates. |
+| grade                   | LoanTap-assigned loan grade. |
+| sub_grade               | LoanTap-assigned loan subgrade. |
+| emp_title               | Job title supplied by the borrower at application. |
+| emp_length              | Employment length in years (0 = <1 year, 10 = 10+ years). |
+| home_ownership          | Home ownership status at application (e.g., Own, Rent, Mortgage). |
+| annual_inc              | Self-reported annual income. |
+| verification_status     | Whether income was verified by LoanTap (Verified / Not Verified / Source Verified). |
+| issue_d                 | Month when the loan was funded. |
+| loan_status             | Current status of the loan (**Target Variable**). |
+| purpose                 | Category provided by the borrower for the loan reason. |
+| title                   | Loan title provided by the borrower. |
+| dti                     | Debt-to-income ratio (monthly debt ÷ monthly income). |
+| earliest_cr_line        | The month of the borrower’s earliest reported credit line. |
+| open_acc                | Number of open credit lines. |
+| pub_rec                 | Number of derogatory public records. |
+| revol_bal               | Total revolving credit balance. |
+| revol_util              | Revolving credit utilization rate (used ÷ available). |
+| total_acc               | Total number of credit lines in borrower’s credit file. |
+| initial_list_status     | Initial listing status of the loan (W or F). |
+| application_type        | Indicates if the application is Individual or Joint. |
+| mort_acc                | Number of mortgage accounts. |
+| pub_rec_bankruptcies    | Number of public record bankruptcies. |
+| Address                 | Address of the individual borrower. |
+
+---
 
 ### **Data Quality Highlights:**
 - **Zero duplicate records** - Robust data pipeline quality
@@ -147,6 +173,18 @@ Threshold Optimization → Business Rule Implementation → Deployment
 | **F1-Score** | **86.4%** | Strong balanced performance |
 | **Accuracy** | **79.9%** | Overall classification success rate |
 
+<p align="center">
+  <img src="assets/confusion_matrix.png" alt="Graduate Admission Prediction Banner" width="45%" />
+  <img src="assets/PR_curve.png" alt="Another Banner" width="45%" />
+</p>
+
+
+<p align="center">
+  <img src="assets/roc_aoc_curve.png" alt="Graduate Admission Prediction Banner" width="45%" />
+</p>
+
+
+
 ### **Risk Management Optimization**
 | Strategy | Threshold | Approval Rate | Default Rate | Business Use Case |
 |----------|-----------|---------------|--------------|-------------------|
@@ -154,12 +192,17 @@ Threshold Optimization → Business Rule Implementation → Deployment
 | **Balanced** | 0.35 | 85.2% | 9.9% | Standard operations, sustainable growth |
 | **Aggressive** | 0.15 | 95.1% | 18.2% | Market expansion, customer acquisition |
 
+
 ### **Key Predictive Insights**
 1. **Geographic Dominance:** ZIP codes emerge as top 9 predictive features
 2. **Credit Grade Validation:** LoanTap's internal grading system strongly correlates with defaults
 3. **Income Verification Premium:** Verified applicants show 15%+ better repayment rates
 4. **Employment Stability Signal:** 10+ years experience significantly reduces default risk
 5. **Debt-to-Income Critical:** DTI above 25% increases default probability exponentially
+
+<p align="center">
+  <img src="assets/top_features.png" alt="Graduate Admission Prediction Banner" width="75%" />
+</p>
 
 ---
 
@@ -257,51 +300,17 @@ class LoanTapRiskEngine:
 ## 🔧 Repository Structure & Quick Start
 
 ```
-
+├── assets/
+├── Notebook and Report/
+│ ├── LoanTap Credit Underwriter - Risk Assessment Engine.ipynb # Jupyter notebooks
+│ └── LoanTap Credit Underwriter - Risk Assessment Engine.pdf # Project reports
+├── .gitignore
+├── LICENSE
+├── README.md
+└── requirements.txt
+└── Sample_Data.png
 ```
 
-### **Quick Start Commands:**
-```bash
-# Clone repository
-git clone https://github.com/yourusername/LoanTap-Credit-Risk-Assessment.git
-cd LoanTap-Credit-Risk-Assessment
-
-# Setup environment
-python -m venv venv
-source venv/bin/activate  # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-
-# Run complete analysis
-python src/model_training.py
-
-# Make predictions
-python src/prediction_engine.py --input data/sample_applications.csv
-```
-
-### **Real-Time Prediction Example:**
-```python
-from src.prediction_engine import LoanTapRiskEngine
-
-# Initialize risk engine
-risk_engine = LoanTapRiskEngine()
-
-# Sample loan application
-application = {
-    'loan_amnt': 15000,
-    'int_rate': 12.5,
-    'grade': 'B',
-    'annual_inc': 75000,
-    'dti': 18.5,
-    'home_ownership': 'MORTGAGE',
-    'emp_length': '10+ years',
-    'verification_status': 'Verified'
-}
-
-# Get risk assessment
-result = risk_engine.predict_default_probability(application)
-print(f"Risk Score: {result['risk_score']:.2%}")
-print(f"Decision: {result['recommendation']}")
-```
 
 ---
 
@@ -346,6 +355,5 @@ print(f"Decision: {result['recommendation']}")
 
 ### ⭐ **If this project demonstrates the kind of ML-powered financial risk analytics that interests you, please star this repository!** ⭐
 
-**Connect with me for fintech ML opportunities, credit risk modeling discussions, or collaboration on similar projects.**
 
 </div>
