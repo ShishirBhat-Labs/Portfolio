@@ -180,7 +180,7 @@ Threshold Optimization → Business Rule Implementation → Deployment
 
 
 <p align="center">
-  <img src="assets/roc_aoc_curve.png" alt="Graduate Admission Prediction Banner" width="45%" />
+  <img src="assets/roc_aoc_curve.png" alt="Graduate Admission Prediction Banner" width="90%" />
 </p>
 
 
