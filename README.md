@@ -96,9 +96,12 @@ Automated underwriting decisions, 60% operational cost reduction, Risk-based pri
 </td>
 
 
-<td width="33%" align="center">
+<td width="33%" align="center" valign="top">
 
 ### 🚀 [More Projects Coming Soon...]
+
+<br>
+
 **Currently Working On:**
 
 <img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square" />
