@@ -39,7 +39,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 <tr>
 <td width="33%" align="center" valign="top">
 
-### [Jamboree Admissions Predictor](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20Business%20Case%20study)
+### [Jamboree Admissions Predictor](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20-%20Business%20Case%20study)
 
 <br>
 
