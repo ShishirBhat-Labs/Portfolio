@@ -1,7 +1,7 @@
 <div align="center">
 
-<h1><b>🚗 Ola Driver Attrition Prediction – Business Case Study</b></h1>
-<h2><b>Machine Learning | Predictive Analytics | HR Tech</b></h2>
+<h1><b>🚗 Ola Driver Attrition Prediction </b></h1>
+<h2><b>Machine Learning | Predictive Analytics</b></h2>
 
 </div>
 
@@ -212,7 +212,7 @@ Actually Churned:        19                  305         (94.14% sensitivity)
 
 ## 💡 Business Recommendations
 
-### **Immediate Actions (0-3 Months)**
+### **Immediate Actions**
 
 #### **Deploy Early Warning System:**
 1. **Monthly Driver Scoring:** Generate attrition risk scores (0-100) for all active drivers
@@ -229,7 +229,7 @@ Actually Churned:        19                  305         (94.14% sensitivity)
 2. **Coaching Trigger:** Activate mentorship for drivers dropping below rating 2.5
 3. **Retraining Curriculum:** Develop intensive 1-week programs to help drivers recover ratings
 
-### **Mid-Term Initiatives (3-6 Months)**
+### **Mid-Term Initiatives**
 
 #### **Tenure-Based Onboarding:**
 1. **Enhanced 90-Day Program:** Structured support and mentorship for new drivers (highest risk cohort)
@@ -246,7 +246,7 @@ Actually Churned:        19                  305         (94.14% sensitivity)
 2. **Skills Training:** Offer optional certifications (premium service, customer service excellence)
 3. **Recognition Programs:** Gamification and rewards for achievement milestones
 
-### **Strategic Initiatives (6-12 Months)**
+### **Strategic Initiatives**
 
 1. **Model Continuous Improvement:** Retrain models quarterly with actual churn outcomes; improve accuracy
 2. **Expanded Feature Set:** Collect additional data (vehicle type, customer ratings, accident history)
@@ -276,107 +276,15 @@ Actually Churned:        19                  305         (94.14% sensitivity)
 ```
 .
 ├── assets/
-│   ├── hero.png                              # Project banner image
-│   ├── eda_distributions.png                 # Exploratory analysis visualizations
-│   ├── model_comparison.png                  # ROC curves and performance metrics
-│   └── feature_importance.png                # Feature importance visualizations
-├── notebooks/
-│   └── Ola_Driver_Attrition_Analysis.ipynb  # Complete analysis and modeling
-├── data/
-│   ├── ola_driver_data.csv                   # Raw dataset (19,104 records)
-│   └── driver_aggregated.csv                 # Aggregated driver-level data (2,381 drivers)
-├── src/
-│   ├── preprocessing.py                      # Data aggregation and feature engineering
-│   ├── modeling.py                           # Model training and hyperparameter tuning
-│   ├── evaluation.py                         # Performance metrics and validation
-│   └── prediction_utils.py                   # Inference and scoring utilities
-├── reports/
-│   └── Ola_Attrition_Case_Study.pdf         # Comprehensive analysis report
+├── Notebook and Report
+│   └── Ola_Driver_Attrition_Analysis.ipynb   # Complete analysis and modeling
+├── Sample_Data.png                           # Snapshot of the data
 ├── requirements.txt                          # Python dependencies
 ├── .gitignore                                # Git ignore file
 ├── LICENSE                                   # MIT License
 └── README.md                                 # This file
 
 ```
-
----
-
-## 🚀 Quick Start Guide
-
-### **Prerequisites**
-```bash
-Python 3.7+
-pip or conda package manager
-Git for version control
-```
-
-### **Installation & Setup**
-
-```bash
-# 1. Clone the repository
-git clone https://github.com/yourusername/Ola-Driver-Attrition.git
-cd Ola-Driver-Attrition
-
-# 2. Create virtual environment (recommended)
-python -m venv attrition_env
-source attrition_env/bin/activate  # On Windows: attrition_env\Scripts\activate
-
-# 3. Install dependencies
-pip install -r requirements.txt
-
-# 4. Launch Jupyter notebook for analysis
-jupyter notebook notebooks/Ola_Driver_Attrition_Analysis.ipynb
-
-# 5. Run complete pipeline
-python src/preprocessing.py
-python src/modeling.py
-python src/evaluation.py
-```
-
-### **Making Predictions**
-```python
-from src.prediction_utils import AttritionPredictor
-
-# Initialize predictor with trained model
-predictor = AttritionPredictor(model_path='models/gradient_boosting_final.pkl')
-
-# Make prediction for a driver
-risk_score = predictor.predict_single(
-    tenure_days=150,
-    latest_quarterly_rating=1.5,
-    total_months_active=5,
-    avg_income=45000,
-    avg_business_value=180000,
-    income_growth_rate=-0.05,
-    rating_change=-1.0,
-    age=28,
-    city='C20'
-)
-
-print(f"Churn Risk Score: {risk_score:.2%}")
-print(f"Recommendation: {'HIGH PRIORITY' if risk_score > 0.70 else 'MONITOR'}")
-```
-
-### **Generate Monthly Driver Report**
-```python
-from src.prediction_utils import AttritionPredictor
-import pandas as pd
-
-# Load all active drivers
-drivers_df = pd.read_csv('data/active_drivers.csv')
-
-# Generate risk scores for entire driver base
-predictor = AttritionPredictor()
-risk_scores = predictor.predict_batch(drivers_df)
-
-# Export high-risk drivers for intervention
-high_risk = risk_scores[risk_scores['churn_probability'] > 0.70].sort_values('churn_probability', ascending=False)
-high_risk.to_csv('reports/monthly_intervention_list.csv', index=False)
-
-print(f"Identified {len(high_risk)} drivers requiring immediate attention")
-```
-
----
 
 ## 📚 Key Findings Summary
 
@@ -395,37 +303,9 @@ print(f"Identified {len(high_risk)} drivers requiring immediate attention")
 
 ---
 
-## 🔗 External Links & Resources
-
-- **Scikit-learn Documentation:** https://scikit-learn.org/stable/
-- **SMOTE Paper:** https://arxiv.org/pdf/1609.02287.pdf
-- **ROC-AUC Explanation:** https://developers.google.com/machine-learning/crash-course/classification/roc-and-auc
-- **Ola Technology Blog:** https://www.olacabs.com/blog
-
----
-
-## 📖 Model Usage Guidelines
-
-### **Production Deployment:**
-- Retrain model every 3 months with latest driver data
-- Validate predictions against actual churn outcomes
-- Monitor prediction accuracy drift over time
-- Update feature engineering pipeline as driver behaviors evolve
-
-### **Ethical Considerations:**
-- Ensure retention interventions don't discriminate by protected attributes
-- Maintain driver privacy; use aggregated insights rather than individual tracking
-- Offer transparent communication about performance metrics to drivers
-- Use predictions to support, not punish drivers
-
----
 
 <div align="center">
 
-### ⭐ **If this project demonstrates valuable skills for ML engineering, HR analytics, or business intelligence, please give it a star!** ⭐
-
-**Author:** [Your Name]  
-**Last Updated:** January 2025  
-**License:** MIT
+### ⭐ **If this project demonstrates valuable skills for ML engineering, analytics, or business intelligence, please give it a star!** ⭐
 
 </div>
