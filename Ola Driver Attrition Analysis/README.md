@@ -105,7 +105,7 @@ Implement a **predictive attrition prevention system** that:
 **Model Winner: Gradient Boosting** – Best balance of sensitivity and specificity for practical deployment
 
 <p align="center">
-  <img src="assets/features.png" alt="Ola Driver Attrition Prediction Banner" width="75%" />
+  <img src="assets/features.png" alt="Performance Graph of Different Models" width="75%" />
 </p>
 
 ### **Key Predictive Insights**
@@ -115,6 +115,10 @@ Implement a **predictive attrition prevention system** that:
 3. **Income Stagnation (Significant):** 98% of drivers reported zero income growth; churned drivers earned ₹11,995 less monthly on average
 4. **Early Departure Pattern:** 63% of churners left within first 200 days; intervention window highly time-sensitive
 5. **Business Value Correlation:** Churned drivers generated 60% less business value (₹210K vs ₹527K monthly)
+
+<p align="center">
+  <img src="assets/feature_weight.png" alt="Feature weights" width="75%" />
+</p>
 
 ### **Confusion Matrix Breakdown**
 ```
