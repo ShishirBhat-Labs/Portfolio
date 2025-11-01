@@ -61,69 +61,6 @@ Implement a **predictive attrition prevention system** that:
 
 ---
 
-## 🔬 Methodology
-
-### **1. Data Science Approach**
-- **Comprehensive EDA:** Statistical analysis of 19,104 monthly records covering 2,381 unique drivers
-- **Temporal Aggregation:** Converted monthly time-series data to driver-level features capturing behavioral trends
-- **Advanced Feature Engineering:** Created 27+ derived features including performance trends, income trajectories, and tenure segments
-- **Ensemble Modeling:** Implemented and benchmarked three state-of-the-art ensemble algorithms
-- **Class Imbalance Handling:** Applied SMOTE to address 2.1:1 churn-to-retention ratio
-
-### **2. Machine Learning Pipeline**
-```
-Data Aggregation → EDA → Feature Engineering → Preprocessing → 
-Encoding → Standardization → Train-Test Split → SMOTE Balancing → 
-Model Training → Hyperparameter Tuning → Cross-Validation → 
-Evaluation & Comparison → Deployment Readiness
-```
-
-### **3. Algorithm Selection & Rationale**
-- **Gradient Boosting (Winner):** Sequential tree building captures complex churn patterns; achieved 95.23% ROC-AUC
-- **Random Forest:** Parallel ensemble for robustness; 93.14% ROC-AUC, strong feature interpretability
-- **Bagging Classifier:** Additional validation; 93.78% ROC-AUC, consistent performance across folds
-
-### **4. Validation Framework**
-- **Stratified 80-20 Split:** Maintains churn ratio in training/test sets
-- **SMOTE Balancing:** Synthetic oversampling on training data only (prevents data leakage)
-- **3-Fold Cross-Validation:** Robust performance estimation during hyperparameter tuning
-- **ROC-AUC Primary Metric:** Handles class imbalance and threshold flexibility better than accuracy
-- **Business Metrics:** Recall (94.14%) prioritized over precision for early detection of churners
-
----
-
-## 💻 Technical Skills & Tools Utilized
-
-### **Programming & Data Manipulation**
-- **Python 3.7+** – Core programming language
-- **Pandas & NumPy** – Data aggregation, transformation, and numerical computing
-- **Scikit-learn** – Machine learning algorithms, preprocessing, and model evaluation
-
-### **Advanced Machine Learning**
-- **Ensemble Methods** – Random Forest, Gradient Boosting, Bagging Classifiers
-- **Hyperparameter Optimization** – RandomizedSearchCV with 3-fold cross-validation
-- **Class Imbalance Handling** – SMOTE for synthetic minority oversampling
-- **Feature Standardization** – StandardScaler for normalized feature distributions
-
-### **Statistical Analysis & Validation**
-- **Correlation Analysis** – Pearson correlation for feature relationships
-- **Hypothesis Testing** – t-tests to validate churn characteristic differences (p < 0.05)
-- **Confusion Matrices** – Detailed evaluation of true/false positives/negatives
-- **ROC Curves** – Threshold-independent performance assessment
-
-### **Data Visualization & Communication**
-- **Matplotlib & Seaborn** – Publication-quality statistical visualizations
-- **Feature Importance Plots** – Visual interpretation of model decision-making
-- **Distribution Analysis** – Univariate and bivariate exploratory visualizations
-
-### **Software Engineering Practices**
-- **Git Version Control** – Collaborative development and code versioning
-- **Modular Code Structure** – Separated preprocessing, modeling, and evaluation logic
-- **Documentation** – Comprehensive README and inline code comments
-- **Reproducibility** – Fixed random seeds and documented hyperparameters
-
----
-
 ## 📊 Dataset Overview
 
 **Source:** Ola Driver Database (Internal)  
@@ -166,6 +103,10 @@ Evaluation & Comparison → Deployment Readiness
 | **F1-Score** | 0.9132 | **0.9327** ⭐ | 0.9238 |
 
 **Model Winner: Gradient Boosting** – Best balance of sensitivity and specificity for practical deployment
+
+<p align="center">
+  <img src="assets/features.png" alt="Ola Driver Attrition Prediction Banner" width="75%" />
+</p>
 
 ### **Key Predictive Insights**
 
@@ -302,7 +243,68 @@ Actually Churned:        19                  305         (94.14% sensitivity)
 **Statistical Significance:** All differences significant at p < 0.05 level (t-tests)
 
 ---
+## 🔬 Methodology
 
+### **1. Data Science Approach**
+- **Comprehensive EDA:** Statistical analysis of 19,104 monthly records covering 2,381 unique drivers
+- **Temporal Aggregation:** Converted monthly time-series data to driver-level features capturing behavioral trends
+- **Advanced Feature Engineering:** Created 27+ derived features including performance trends, income trajectories, and tenure segments
+- **Ensemble Modeling:** Implemented and benchmarked three state-of-the-art ensemble algorithms
+- **Class Imbalance Handling:** Applied SMOTE to address 2.1:1 churn-to-retention ratio
+
+### **2. Machine Learning Pipeline**
+```
+Data Aggregation → EDA → Feature Engineering → Preprocessing → 
+Encoding → Standardization → Train-Test Split → SMOTE Balancing → 
+Model Training → Hyperparameter Tuning → Cross-Validation → 
+Evaluation & Comparison → Deployment Readiness
+```
+
+### **3. Algorithm Selection & Rationale**
+- **Gradient Boosting (Winner):** Sequential tree building captures complex churn patterns; achieved 95.23% ROC-AUC
+- **Random Forest:** Parallel ensemble for robustness; 93.14% ROC-AUC, strong feature interpretability
+- **Bagging Classifier:** Additional validation; 93.78% ROC-AUC, consistent performance across folds
+
+### **4. Validation Framework**
+- **Stratified 80-20 Split:** Maintains churn ratio in training/test sets
+- **SMOTE Balancing:** Synthetic oversampling on training data only (prevents data leakage)
+- **3-Fold Cross-Validation:** Robust performance estimation during hyperparameter tuning
+- **ROC-AUC Primary Metric:** Handles class imbalance and threshold flexibility better than accuracy
+- **Business Metrics:** Recall (94.14%) prioritized over precision for early detection of churners
+
+---
+
+## 💻 Technical Skills & Tools Utilized
+
+### **Programming & Data Manipulation**
+- **Python 3.7+** – Core programming language
+- **Pandas & NumPy** – Data aggregation, transformation, and numerical computing
+- **Scikit-learn** – Machine learning algorithms, preprocessing, and model evaluation
+
+### **Advanced Machine Learning**
+- **Ensemble Methods** – Random Forest, Gradient Boosting, Bagging Classifiers
+- **Hyperparameter Optimization** – RandomizedSearchCV with 3-fold cross-validation
+- **Class Imbalance Handling** – SMOTE for synthetic minority oversampling
+- **Feature Standardization** – StandardScaler for normalized feature distributions
+
+### **Statistical Analysis & Validation**
+- **Correlation Analysis** – Pearson correlation for feature relationships
+- **Hypothesis Testing** – t-tests to validate churn characteristic differences (p < 0.05)
+- **Confusion Matrices** – Detailed evaluation of true/false positives/negatives
+- **ROC Curves** – Threshold-independent performance assessment
+
+### **Data Visualization & Communication**
+- **Matplotlib & Seaborn** – Publication-quality statistical visualizations
+- **Feature Importance Plots** – Visual interpretation of model decision-making
+- **Distribution Analysis** – Univariate and bivariate exploratory visualizations
+
+### **Software Engineering Practices**
+- **Git Version Control** – Collaborative development and code versioning
+- **Modular Code Structure** – Separated preprocessing, modeling, and evaluation logic
+- **Documentation** – Comprehensive README and inline code comments
+- **Reproducibility** – Fixed random seeds and documented hyperparameters
+
+---
 
 <div align="center">
 
