@@ -37,40 +37,8 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 
 <table>
 <tr>
-<td width="33%" align="center" valign="top">
 
-### [Jamboree Admissions Predictor](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20-%20Business%20Case%20study)
-
-<br>
-
-**Graduate Admission Prediction**
-
-<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
-<img src="https://img.shields.io/badge/ML-Linear Regression-red?style=flat-square" />
-
-<br>
-<br>
-
-
-<div align="center"><strong>Tech Stack:</strong></div>
-Python • EDA • Sk-learn • Pandas • Feature Engineering • Statistical Analysis • ML • Linear Regression • GD Optimisation
-
-<br>
-<br>
-
-<div align="center"><strong>Key insight:</strong></div>
-GRE/TOEFL score impact, university rating correlation, admission probability modeling  
-
-<br>
-<br>
-
-<div align="center"><strong>Business Value:</strong></div>
-Student guidance optimization, admission success prediction
-
-</td>
-
-
-<td width="33%" align="center" valign="top">
+<td width="50%" align="center" valign="top">
 
 ### [LoanTap Credit Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter%20-%20Risk%20Assessment%20Engine)
 
@@ -96,7 +64,7 @@ Automated underwriting decisions, 60% operational cost reduction, Risk-based pri
 </td>
 
 
-<td width="33%" align="center" style="vertical-align: top; padding: 20px;">
+<td width="50%" align="center" style="vertical-align: top; padding: 20px;">
   
 ### [Ola Driver Attrition Prediction](https://github.com/yourusername/Ola-Driver-Attrition)
 <br>
@@ -132,10 +100,10 @@ Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,
 
 | Project | Tools Used | Area of Analysis | Project Description |
 |:---|:---|:---|:---|
-| **[Ola Driver Attrition](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Ola%20Driver%20Attrition)** | Python, Pandas, NumPy, Scikit-learn, Gradient Boosting, Random Forest, Bagging, SMOTE, Cross-Validation | Data cleaning, EDA, Feature Engineering, Ensemble Learning, Class Imbalance Handling, Model Optimization | Predicts driver churn for Ola using ensemble methods (Gradient Boosting, Random Forest). Processes 19,104 monthly records from 2,381 drivers across 24 months. Achieves **95.23% ROC-AUC** with **94.14% recall**. Reveals tenure and performance ratings as key churn drivers, enabling data-backed retention strategies worth **₹50+ lakhs annually**. |
-| **[Delhivery Logistics Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Delhivery%20Logistics%20Analytics)** | Python, Pandas, NumPy, SciPy, Matplotlib, Seaborn, Regex, StandardScaler, Hypothesis Testing | Data Engineering, EDA, Feature Extraction, Statistical Analysis, Hypothesis Testing, Outlier Treatment | Comprehensive data engineering on 144,316 delivery records aggregated to 14,787 trips across 26 days. Engineers 15+ temporal and geographic features using regex extraction. Detects critical OSRM model calibration issues (**99.4% time underestimation**). Identifies 3,729 routes across 29 states with busiest corridor analysis. |
-| **[Graduate Admission Prediction (Jamboree)](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction)** | Python, Pandas, NumPy, Scikit-learn, Statsmodels, Linear/Ridge/Lasso Regression, Matplotlib, Seaborn | EDA, Feature Engineering, Regression Analysis, Statistical Validation, Model Comparison, VIF Analysis | Predicts graduate admission probability using Lasso Regression on 500 student profiles. Achieves **82% R² accuracy** with **6.1% RMSE**. Identifies CGPA as strongest predictor (88% correlation) and research experience as **15.5% probability boost**. Enables data-driven admission guidance for EdTech platform. |
-| **[LoanTap Credit Risk Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter)** | Python, Pandas, NumPy, Scikit-learn, Logistic Regression, StandardScaler, Cross-Validation | EDA, Feature Engineering, Classification, Model Optimization, Risk Analytics, Hyperparameter Tuning | Develops logistic regression model for loan default prediction on 396,030 records. Achieves **90.6% ROC-AUC** with **94.5% precision**. Discovers geographic location as dominant default predictor. Establishes risk-based approval tiers enabling **80% automated decisions** and **60% operational cost reduction**. |
+| **[Ola Driver Attrition](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Ola%20Driver%20Attrition%20Analysis)** | Python, Pandas, NumPy, Scikit-learn, Gradient Boosting, Random Forest, Bagging, SMOTE, Cross-Validation | Data cleaning, EDA, Feature Engineering, Ensemble Learning, Class Imbalance Handling, Model Optimization | Predicts driver churn for Ola using ensemble methods (Gradient Boosting, Random Forest). Processes 19,104 monthly records from 2,381 drivers across 24 months. Achieves **95.23% ROC-AUC** with **94.14% recall**. Reveals tenure and performance ratings as key churn drivers, enabling data-backed retention strategies worth **₹50+ lakhs annually**. |
+| **[Delhivery Logistics Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Delhivery%20Logistics%20Analytics%20%E2%80%93%20Business%20Case%20Study)** | Python, Pandas, NumPy, SciPy, Matplotlib, Seaborn, Regex, StandardScaler, Hypothesis Testing | Data Engineering, EDA, Feature Extraction, Statistical Analysis, Hypothesis Testing, Outlier Treatment | Comprehensive data engineering on 144,316 delivery records aggregated to 14,787 trips across 26 days. Engineers 15+ temporal and geographic features using regex extraction. Detects critical OSRM model calibration issues (**99.4% time underestimation**). Identifies 3,729 routes across 29 states with busiest corridor analysis. |
+| **[Graduate Admission Prediction (Jamboree)](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20-%20Business%20Case%20study)** | Python, Pandas, NumPy, Scikit-learn, Statsmodels, Linear/Ridge/Lasso Regression, Matplotlib, Seaborn | EDA, Feature Engineering, Regression Analysis, Statistical Validation, Model Comparison, VIF Analysis | Predicts graduate admission probability using Lasso Regression on 500 student profiles. Achieves **82% R² accuracy** with **6.1% RMSE**. Identifies CGPA as strongest predictor (88% correlation) and research experience as **15.5% probability boost**. Enables data-driven admission guidance for EdTech platform. |
+| **[LoanTap Credit Risk Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter%20-%20Risk%20Assessment%20Engine)** | Python, Pandas, NumPy, Scikit-learn, Logistic Regression, StandardScaler, Cross-Validation | EDA, Feature Engineering, Classification, Model Optimization, Risk Analytics, Hyperparameter Tuning | Developed logistic regression model for loan default prediction on 396,030 records. Achieves **90.6% ROC-AUC** with **94.5% precision**. Discovers geographic location as dominant default predictor. Establishes risk-based approval tiers enabling **80% automated decisions** and **60% operational cost reduction**. |
 
 
 
