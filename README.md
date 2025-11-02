@@ -43,7 +43,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 
 <br>
 
-**Graduate Admission Prediction & Success Factor Analysis**
+**Graduate Admission Prediction**
 
 <img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
 <img src="https://img.shields.io/badge/ML-Linear Regression-red?style=flat-square" />
@@ -70,7 +70,7 @@ Student guidance optimization, admission success prediction
 </td>
 
 
-<td width="33%" align="center";vertical-align: top>
+<td width="33%" align="center" valign="top">
 
 ### [LoanTap Credit Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter%20-%20Risk%20Assessment%20Engine)
 
@@ -96,23 +96,28 @@ Automated underwriting decisions, 60% operational cost reduction, Risk-based pri
 </td>
 
 
-<td width="33%" align="center" valign="top">
-
-### 🚀 [More Projects Coming Soon...]
-
+<td width="33%" align="center" style="vertical-align: top; padding: 20px;">
+  
+### [Ola Driver Attrition Prediction](https://github.com/yourusername/Ola-Driver-Attrition)
 <br>
 
-**Currently Working On:**
+**Predictive Retention Strategy**
 
-<img src="https://img.shields.io/badge/Status-In%20Progress-yellow?style=flat-square" />
-
-**Next Additions:**
-- **Customer Segmentation Analysis** (Aerofit Case Study)
-- **Business Intelligence Dashboard** (Retail Analytics)
-- **Time Series Forecasting** (Demand Prediction)
-- **Computer Vision Projects** (Professional Experience)
-
-📈 **Portfolio Expanding Weekly**
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
+<img src="https://img.shields.io/badge/ML-Gradient Boosting-orange?style=flat-square" />
+<br>
+<br>
+<div align="center"><strong>Tech Stack:</strong></div>
+Feature Engineering • Ensemble Methods • Gradient Boosting • SMOTE • Cross-Validation • Class Imbalance Handling • NumPy • ROC-AUC • Hyperparameter Tuning
+<br>
+<br>
+<div align="center"><strong>Key Insights:</strong></div>
+Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,995 identified between churned/retained drivers, Research experience provides 15.5% admission boost
+<br>
+<br>
+<div align="center"><strong>Business Value:</strong></div>
+94.14% early churn detection, 40% counselor efficiency gain, ₹50+ lakhs annual savings in recruitment costs
+<br>
 
 </td>
 </tr>
