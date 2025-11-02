@@ -126,21 +126,18 @@ Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,
 <br>
 
 <div align="center">
-  <h2> 🛠️ Technical Skills Demonstrated </h2>
+  <h2> 🛠️ Complete Portfolio </h2>
 </div>
 
-<div align="center">
 
-| **Category** | **Technologies** | **Applications** |
-|:---:|:---:|:---:|
-| **📊 Data Analysis** | Python, Pandas, NumPy | Data cleaning, EDA, statistical analysis |
-| **📈 Visualization** | Matplotlib, Seaborn, Plotly, Tableau | Interactive dashboards, storytelling |
-| **🤖 Machine Learning** | Scikit-learn, Feature Engineering | Classification, regression, clustering |
-| **💾 Database & SQL** | MySQL, Advanced Queries | Data extraction, complex joins, window functions |
-| **📉 Statistics** | Hypothesis Testing, A/B Testing | Statistical inference, experiment design |
-| **🔍 Business Intelligence** | Excel, KPI Analysis | Performance metrics, business insights |
+| Project | Tools Used | Area of Analysis | Project Description |
+|:---|:---|:---|:---|
+| **[Ola Driver Attrition](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Ola%20Driver%20Attrition)** | Python, Pandas, NumPy, Scikit-learn, Gradient Boosting, Random Forest, Bagging, SMOTE, Cross-Validation | Data cleaning, EDA, Feature Engineering, Ensemble Learning, Class Imbalance Handling, Model Optimization | Predicts driver churn for Ola using ensemble methods (Gradient Boosting, Random Forest). Processes 19,104 monthly records from 2,381 drivers across 24 months. Achieves **95.23% ROC-AUC** with **94.14% recall**. Reveals tenure and performance ratings as key churn drivers, enabling data-backed retention strategies worth **₹50+ lakhs annually**. |
+| **[Delhivery Logistics Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Delhivery%20Logistics%20Analytics)** | Python, Pandas, NumPy, SciPy, Matplotlib, Seaborn, Regex, StandardScaler, Hypothesis Testing | Data Engineering, EDA, Feature Extraction, Statistical Analysis, Hypothesis Testing, Outlier Treatment | Comprehensive data engineering on 144,316 delivery records aggregated to 14,787 trips across 26 days. Engineers 15+ temporal and geographic features using regex extraction. Detects critical OSRM model calibration issues (**99.4% time underestimation**). Identifies 3,729 routes across 29 states with busiest corridor analysis. |
+| **[Graduate Admission Prediction (Jamboree)](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction)** | Python, Pandas, NumPy, Scikit-learn, Statsmodels, Linear/Ridge/Lasso Regression, Matplotlib, Seaborn | EDA, Feature Engineering, Regression Analysis, Statistical Validation, Model Comparison, VIF Analysis | Predicts graduate admission probability using Lasso Regression on 500 student profiles. Achieves **82% R² accuracy** with **6.1% RMSE**. Identifies CGPA as strongest predictor (88% correlation) and research experience as **15.5% probability boost**. Enables data-driven admission guidance for EdTech platform. |
+| **[LoanTap Credit Risk Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter)** | Python, Pandas, NumPy, Scikit-learn, Logistic Regression, StandardScaler, Cross-Validation | EDA, Feature Engineering, Classification, Model Optimization, Risk Analytics, Hyperparameter Tuning | Develops logistic regression model for loan default prediction on 396,030 records. Achieves **90.6% ROC-AUC** with **94.5% precision**. Discovers geographic location as dominant default predictor. Establishes risk-based approval tiers enabling **80% automated decisions** and **60% operational cost reduction**. |
 
-</div>
+
 
 
 <br>
