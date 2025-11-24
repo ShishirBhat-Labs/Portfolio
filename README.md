@@ -38,7 +38,7 @@ Welcome to my data science portfolio! This repository showcasing my skills, proj
 <table>
 <tr>
 
-<td width="50%" align="center" valign="top">
+<td width="33%" align="center" valign="top">
 
 ### [LoanTap Credit Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter%20-%20Risk%20Assessment%20Engine)
 
@@ -64,9 +64,9 @@ Automated underwriting decisions, 60% operational cost reduction, Risk-based pri
 </td>
 
 
-<td width="50%" align="center" style="vertical-align: top; padding: 20px;">
+<td width="33%" align="center" style="vertical-align: top; padding: 20px;">
   
-### [Ola Driver Attrition Prediction](https://github.com/yourusername/Ola-Driver-Attrition)
+### [Ola Driver Attrition Prediction](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Ola%20Driver%20Attrition%20Analysis)
 <br>
 
 **Predictive Retention Strategy**
@@ -80,11 +80,36 @@ Feature Engineering • Ensemble Methods • Gradient Boosting • SMOTE • Cro
 <br>
 <br>
 <div align="center"><strong>Key Insights:</strong></div>
-Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,995 identified between churned/retained drivers, Research experience provides 15.5% admission boost
+Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,995 between churned/retained drivers, 94.14% early detection capability
 <br>
 <br>
 <div align="center"><strong>Business Value:</strong></div>
-94.14% early churn detection, 40% counselor efficiency gain, ₹50+ lakhs annual savings in recruitment costs
+94.14% early churn detection, 40% retention efficiency gain, ₹50+ lakhs annual savings in recruitment costs
+<br>
+
+</td>
+
+<td width="33%" align="center" style="vertical-align: top; padding: 20px;">
+
+### [Personal Sleep Optimization](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Personal%20Sleep%20Performance%20Optimization)
+<br>
+
+**Biometric Analytics & Behavioral Optimization**
+
+<img src="https://img.shields.io/badge/Status-Completed-brightgreen?style=flat-square" />
+<img src="https://img.shields.io/badge/Analytics-Statistical Inference-blue?style=flat-square" />
+<br>
+<br>
+<div align="center"><strong>Tech Stack:</strong></div>
+Python • EDA • Pandas • NumPy • SciPy • Statistical Testing • K-means Clustering • Time Series Analysis • Seaborn • Matplotlib
+<br>
+<br>
+<div align="center"><strong>Key Insights:</strong></div>
+Sleep duration as dominant quality driver (r=0.739), REM deficit of 3-8% below optimal, Seasonal temperature effects (p<0.001), 70.2% chronic sleep debt
+<br>
+<br>
+<div align="center"><strong>Business Value:</strong></div>
+Quantified 25-30 point score improvement potential, Identified elite sleep profile (7.8h, 87% efficiency, 21% REM), Actionable behavioral optimization roadmap
 <br>
 
 </td>
@@ -104,6 +129,7 @@ Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,
 | **[Delhivery Logistics Analytics](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Delhivery%20Logistics%20Analytics%20%E2%80%93%20Business%20Case%20Study)** | Python, Pandas, NumPy, SciPy, Matplotlib, Seaborn, Regex, StandardScaler, Hypothesis Testing | Data Engineering, EDA, Feature Extraction, Statistical Analysis, Hypothesis Testing, Outlier Treatment | Comprehensive data engineering on 144,316 delivery records aggregated to 14,787 trips across 26 days. Engineers 15+ temporal and geographic features using regex extraction. Detects critical OSRM model calibration issues (**99.4% time underestimation**). Identifies 3,729 routes across 29 states with busiest corridor analysis. |
 | **[Graduate Admission Prediction (Jamboree)](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Jamboree%20Admissions%20Prediction%20-%20Business%20Case%20study)** | Python, Pandas, NumPy, Scikit-learn, Statsmodels, Linear/Ridge/Lasso Regression, Matplotlib, Seaborn | EDA, Feature Engineering, Regression Analysis, Statistical Validation, Model Comparison, VIF Analysis | Predicts graduate admission probability using Lasso Regression on 500 student profiles. Achieves **82% R² accuracy** with **6.1% RMSE**. Identifies CGPA as strongest predictor (88% correlation) and research experience as **15.5% probability boost**. Enables data-driven admission guidance for EdTech platform. |
 | **[LoanTap Credit Risk Underwriter](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/LoanTap%20Credit%20Underwriter%20-%20Risk%20Assessment%20Engine)** | Python, Pandas, NumPy, Scikit-learn, Logistic Regression, StandardScaler, Cross-Validation | EDA, Feature Engineering, Classification, Model Optimization, Risk Analytics, Hyperparameter Tuning | Developed logistic regression model for loan default prediction on 396,030 records. Achieves **90.6% ROC-AUC** with **94.5% precision**. Discovers geographic location as dominant default predictor. Establishes risk-based approval tiers enabling **80% automated decisions** and **60% operational cost reduction**. |
+| **[Personal Sleep Optimization](https://github.com/ShishirBhat-Labs/Portfolio/tree/main/Personal%20Sleep%20Performance%20Optimization)** | Python, Pandas, NumPy, SciPy, Scikit-learn, Matplotlib, Seaborn, Statsmodels | Time Series Analysis, EDA, Statistical Hypothesis Testing, K-means Clustering, Correlation Analysis, Temporal Feature Engineering | Analyzed 818 sleep records spanning 24 months (53.1% with complete stage data). Identified sleep duration as strongest quality driver (r=0.739, p<0.001) and quantified REM sleep deficit (17.3% vs optimal 20-25%). Discovered statistically significant seasonal temperature effects (ANOVA F=6.63, p<0.001). Generated evidence-based behavioral optimization roadmap targeting 25-30 point score improvement (from avg 71 to elite 81+). |
 
 
 
@@ -143,7 +169,7 @@ Tenure & performance ratings drive 57.6% attrition signals, Income gap of ₹11,
 </div>
 
 
-- **Latest Update:** - Adding samsung galaxy watch sleep analysis
+- **Latest Update:** Added Personal Sleep Performance Optimization using 24 months of Samsung Health biometric tracking
 - **Next Addition:** Deep learning projects from ongoing DSML specialization
 - **Coming Soon:** MLOps pipeline implementation case study
 
