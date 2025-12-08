@@ -2,7 +2,7 @@
 
 Transform educational YouTube videos into comprehensive, well-structured study notes powered by AI.
 
-## Why I Built This
+## Why I Built This ??
 
 I wanted a quick way to convert any educational YouTube video I watch into clean, organized study notes that I can actually sit down and handwrite. Instead of scrambling to pause videos and manually note everything, this tool:
 
@@ -13,6 +13,10 @@ I wanted a quick way to convert any educational YouTube video I watch into clean
 - **Includes examples and definitions** all in one place
 
 Now I can watch a video, generate notes in seconds, and spend my study time actually learning instead of transcribing.
+
+<p align="center">
+  <img src=".images/welcome_screen.png" alt="Welcome screen" />
+</p>
 
 ## Quick Start
 
@@ -28,24 +32,36 @@ Now I can watch a video, generate notes in seconds, and spend my study time actu
    cd youtube-study-notes
    ```
 
-2. **Install dependencies**
+2. **Create Virtual Environment**
+   ```bash
+   python -m venv .venv
+   ```
+
+3. **Install dependencies**
    ```bash
    pip install -r requirements.txt
    ```
 
-3. **Configure API key**
+4. **Configure API key**
    
    Create `.streamlit/secrets.toml`:
    ```toml
    GROQ_API_KEY = "your_api_key_here"
    ```
 
-4. **Run the app**
+5. **File Structure**
+   
+   Your File structure should look something like this:
+   <p align="center">
+   <img src=".images/file_structure.png" alt="File Structure"/>
+   </p>
+   
+7. **Run the app**
    ```bash
    streamlit run app.py
    ```
 
-5. **Use the app**
+8. **Use the app**
    - Open http://localhost:8501 in your browser
    - Paste a YouTube URL or video ID
    - Click "Generate"
