@@ -1,0 +1,241 @@
+## 1: FOUNDATIONAL OVERVIEW  
+
+- **Core problem**: Understanding what eigenvectors and eigenvalues are, why they matter, and how they reveal the essential action of a linear transformation represented by a matrix.  
+- **Learning objectives**  
+  - Define eigenvectors and eigenvalues.  
+  - Explain how a linear transformation can be visualized using eigenvectors.  
+  - Compute eigenvalues and eigenvectors from a matrix.  
+  - Recognize special cases (rotations, shears, scalings).  
+  - Use an eigenbasis to simplify matrix operations, especially powers.  
+- **Background prerequisites**  
+  - Linear transformations and matrix representation.  
+  - Determinants and their relation to linear systems.  
+  - Solving linear systems and understanding when a system has non‑zero solutions.  
+  - Change of basis and the identity matrix.  
+- **Why this topic matters**  
+  - Eigenvectors give directions that are preserved (up to scaling) by a transformation.  
+  - Eigenvalues quantify how much stretching or squishing occurs along those directions.  
+  - Diagonalization (using an eigenbasis) turns complicated matrix operations into simple scalar operations.  
+  - Many applications (physics, engineering, data science) rely on eigenanalysis (e.g., rotations, vibrations, PCA).
+
+---
+
+## 2: KEY TERMS & DEFINITIONS  
+
+| Term | Definition | Context | Example |
+|------|------------|---------|---------|
+| **Eigenvector** | A non‑zero vector that only gets scaled (not rotated) by a linear transformation. | In a matrix A, v is an eigenvector if A*v = lambda*v. | For A = [[3,1],[0,2]], the vector [1,0] is an eigenvector. |
+| **Eigenvalue** | The scalar λ that describes how much an eigenvector is stretched or squished. | In A*v = λ*v, λ is the eigenvalue corresponding to v. | For the same A, λ = 3 for v = [1,0]. |
+| **Linear transformation** | A function that maps vectors to vectors while preserving addition and scalar multiplication. | Represented by a matrix acting on column vectors. | Rotating a 2‑D vector by 90° is a linear transformation. |
+| **Matrix** | A rectangular array of numbers that encodes a linear transformation. | Columns represent the images of basis vectors. | A = [[3,1],[0,2]] transforms i‑hat to [3,0] and j‑hat to [1,2]. |
+| **Determinant** | A scalar that indicates whether a matrix is invertible and whether a linear system has a unique solution. | det(A - λ*I) = 0 gives eigenvalues. | det([[3-λ,1],[0,2-λ]]) = (3-λ)(2-λ). |
+| **Span** | All scalar multiples of a vector (a line through the origin). | Eigenvectors stay on their own span after transformation. | The span of [1,0] is the x‑axis. |
+| **Basis** | A set of linearly independent vectors that span the whole space. | Changing basis changes the coordinate representation of a matrix. | The standard basis {i‑hat, j‑hat}. |
+| **Change of basis matrix** | A matrix whose columns are the coordinates of the new basis vectors. | Used to transform a matrix into a new coordinate system. | P = [[1, -1],[0,1]] for eigenvectors [1,0] and [-1,1]. |
+| **Eigenbasis** | A basis consisting entirely of eigenvectors of a matrix. | If a matrix has enough eigenvectors, it can be diagonalized. | For A = [[-1,0],[0,2]], the eigenbasis is {i‑hat, j‑hat}. |
+| **Diagonal matrix** | A matrix with zeros everywhere except possibly on the diagonal. | Diagonal matrices are easy to raise to powers. | D = [[-1,0],[0,2]]. |
+| **Identity matrix** | A square matrix with ones on the diagonal and zeros elsewhere. | Denoted I; multiplying by I leaves a vector unchanged. | I = [[1,0],[0,1]]. |
+| **Characteristic polynomial** | The polynomial det(A - λ*I) whose roots are the eigenvalues. | Solving it gives λ values. | For A = [[3,1],[0,2]], the polynomial is (3-λ)(2-λ). |
+| **Complex eigenvalue** | An eigenvalue that is not a real number. | Occurs in rotations; indicates no real eigenvectors. | For a 90° rotation, eigenvalues are i and -i. |
+| **Scaling matrix** | A matrix that multiplies every vector by the same scalar. | All vectors are eigenvectors. | [[2,0],[0,2]] scales by 2. |
+| **Shear matrix** | A matrix that shifts one coordinate direction relative to another. | Only some vectors are eigenvectors. | [[1,1],[0,1]] has eigenvalue 1 on the x‑axis. |
+
+---
+
+## 3: CORE CONCEPTS & EXPLANATIONS  
+
+### Eigenvector and Eigenvalue  
+- A vector that is only stretched or squished, never rotated, by a linear transformation.  
+- The scaling factor is the eigenvalue.  
+- Mathematically expressed as A*v = λ*v.  
+- Example: For A = [[3,1],[0,2]], the vector [1,0] satisfies A*[1,0] = [3,0] = 3*[1,0]; thus λ = 3.  
+
+### Linear Transformation as a Matrix  
+- A matrix acts on a vector by multiplying it: A*v.  
+- The columns of A are the images of the standard basis vectors.  
+- Visualizing the transformation: each basis vector is moved to its column vector.  
+
+### Eigenvalue Equation  
+- A*v = λ*v.  
+- Rewriting the right‑hand side as λ*I*v, where I is the identity matrix.  
+- Subtracting gives (A - λ*I)*v = 0.  
+
+### Determinant Zero Condition  
+- For a non‑zero vector v to satisfy (A - λ*I)*v = 0, the matrix (A - λ*I) must be singular.  
+- A singular matrix has determinant zero.  
+- Therefore, det(A - λ*I) = 0 is the condition for λ to be an eigenvalue.  
+
+### Characteristic Polynomial  
+- The determinant det(A - λ*I) is a polynomial in λ.  
+- Its roots are the eigenvalues.  
+- Example: For A = [[3,1],[0,2]], det(A - λ*I) = (3-λ)(2-λ).  
+- Roots: λ = 3 and λ = 2.  
+
+### Solving for Eigenvectors  
+- Substitute each eigenvalue λ back into (A - λ*I).  
+- Solve the resulting homogeneous linear system for v.  
+- Non‑zero solutions are the eigenvectors.  
+- Example: λ = 2 gives matrix [[1,1],[0,0]]; solutions are multiples of [-1,1].  
+
+### Special Cases  
+- **Rotation**: 90° rotation matrix [[0,-1],[1,0]] gives characteristic polynomial λ²+1.  
+  - Roots are i and -i → no real eigenvectors.  
+- **Shear**: Matrix [[1,1],[0,1]] gives determinant 1-λ².  
+  - Root λ = 1 → only eigenvectors on the x‑axis.  
+- **Scaling**: Matrix [[2,0],[0,2]] has λ = 2 with every vector as an eigenvector.  
+
+### Eigenbasis and Diagonalization  
+- If a matrix has enough independent eigenvectors to form a basis, it is diagonalizable.  
+- Construct matrix P with eigenvectors as columns.  
+- Compute D = P^-1 * A * P.  
+- D will be diagonal with eigenvalues on the diagonal.  
+- Example: For eigenvectors [1,0] and [-1,1], P = [[1,-1],[0,1]]; D = [[3,0],[0,2]].  
+
+### Powers of a Diagonal Matrix  
+- Raising a diagonal matrix to a power n multiplies each diagonal entry by its n‑th power.  
+- D^n = diag(λ1^n, λ2^n, …).  
+- This makes repeated application of a linear transformation trivial in an eigenbasis.  
+
+### Change of Basis Formula  
+- To express A in a new basis defined by P, compute P^-1 * A * P.  
+- The new matrix represents the same transformation in the new coordinates.  
+
+---
+
+## 4: WORKED EXAMPLES  
+
+### 2‑D Transformation [[3,1],[0,2]]  
+- **Problem**: Find eigenvalues and eigenvectors.  
+- **Given**: A = [[3,1],[0,2]].  
+- **Solution**  
+  1. Compute det(A - λ*I) = det([[3-λ,1],[0,2-λ]]) = (3-λ)(2-λ).  
+  2. Set equal to zero: (3-λ)(2-λ) = 0 → λ = 3 or λ = 2.  
+  3. For λ = 3: (A - 3I) = [[0,1],[0,-1]] → solve [[0,1],[0,-1]]*v = 0 → v = [1,0] (x‑axis).  
+  4. For λ = 2: (A - 2I) = [[1,1],[0,0]] → solve → v = [-1,1] (diagonal line).  
+- **Answer**  
+  - Eigenvalues: 3 (x‑axis) and 2 (diagonal).  
+  - Eigenvectors: multiples of [1,0] and [-1,1].  
+
+### 90° Rotation [[0,-1],[1,0]]  
+- **Problem**: Determine eigenvalues and eigenvectors.  
+- **Given**: A = [[0,-1],[1,0]].  
+- **Solution**  
+  1. det(A - λ*I) = det([[ -λ, -1],[1, -λ]]) = λ² + 1.  
+  2. λ² + 1 = 0 → λ = i or λ = -i.  
+  3. No real λ → no real eigenvectors.  
+- **Answer**  
+  - Eigenvalues: i, -i (complex).  
+  - No real eigenvectors; rotation has no fixed direction in the plane.  
+
+### Shear [[1,1],[0,1]]  
+- **Problem**: Find eigenvalues and eigenvectors.  
+- **Given**: A = [[1,1],[0,1]].  
+- **Solution**  
+  1. det(A - λ*I) = det([[1-λ,1],[0,1-λ]]) = (1-λ)².  
+  2. λ = 1 (double root).  
+  3. (A - I) = [[0,1],[0,0]] → solve → v = [1,0] (x‑axis).  
+- **Answer**  
+  - Eigenvalue: 1.  
+  - Eigenvectors: all multiples of [1,0] (x‑axis).  
+
+### Scaling [[2,0],[0,2]]  
+- **Problem**: Identify eigenvalues and eigenvectors.  
+- **Given**: A = [[2,0],[0,2]].  
+- **Solution**  
+  1. det(A - λ*I) = (2-λ)² → λ = 2.  
+  2. (A - 2I) = [[0,0],[0,0]] → any non‑zero vector satisfies.  
+- **Answer**  
+  - Eigenvalue: 2.  
+  - Eigenvectors: every non‑zero vector in the plane.  
+
+### Eigenbasis Example  
+- **Problem**: Diagonalize A = [[-1,0],[0,2]] using its eigenbasis.  
+- **Given**: Eigenvectors i‑hat (scaled by -1) and j‑hat (scaled by 2).  
+- **Solution**  
+  1. P = [[-1,0],[0,2]] (columns are eigenvectors).  
+  2. Since A is already diagonal, P = I and D = A.  
+- **Answer**  
+  - Diagonal matrix D = [[-1,0],[0,2]].  
+  - Powers: D^n = [[(-1)^n,0],[0,2^n]].  
+
+---
+
+## 5: STEP‑BY‑STEP PROCEDURES  
+
+### Find Eigenvalues of a Matrix  
+- Purpose: Identify scalars λ that satisfy A*v = λ*v.  
+- When to use: Any square matrix where eigenanalysis is needed.  
+- Steps  
+  1. Write the identity matrix I of the same size as A.  
+  2. Form the matrix A - λ*I (subtract λ from each diagonal entry).  
+  3. Compute the determinant of A - λ*I.  
+  4. Set the determinant equal to zero: det(A - λ*I) = 0.  
+  5. Solve the resulting polynomial equation for λ.  
+
+### Find Eigenvectors for a Given Eigenvalue  
+- Purpose: Find non‑zero vectors that satisfy (A - λ*I)*v = 0.  
+- When to use: After an eigenvalue λ has been found.  
+- Steps  
+  1. Substitute λ into A - λ*I.  
+  2. Solve the homogeneous linear system (A - λ*I)*v = 0.  
+  3. Express the solution set in parametric form; each free variable gives a direction.  
+  4. Pick a non‑zero vector from the solution set as an eigenvector.  
+
+### Diagonalize a Matrix Using an Eigenbasis  
+- Purpose: Simplify matrix operations by converting to a diagonal form.  
+- When to use: When the matrix has a full set of independent eigenvectors.  
+- Steps  
+  1. Find all eigenvalues λ₁,…,λₙ.  
+  2. For each λᵢ, find a corresponding eigenvector vᵢ.  
+  3. Assemble matrix P with columns v₁,…,vₙ.  
+  4. Compute the inverse of P, denoted P^-1.  
+  5. Calculate D = P^-1 * A * P.  
+  6. Verify that D is diagonal with entries λ₁,…,λₙ on the diagonal.  
+
+### Compute a High Power of a Matrix via Eigenbasis  
+- Purpose: Efficiently compute Aⁿ for large n.  
+- When to use: A is diagonalizable.  
+- Steps  
+  1. Diagonalize A: find P and D such that A = P * D * P^-1.  
+  2. Compute Dⁿ by raising each diagonal entry to the n‑th power: Dⁿ = diag(λ₁ⁿ, λ₂ⁿ, …).  
+  3. Multiply back: Aⁿ = P * Dⁿ * P^-1.  
+
+### Change of Basis for a Matrix  
+- Purpose: Express a matrix in a new coordinate system.  
+- When to use: Need to work in a basis that simplifies the matrix (e.g., eigenbasis).  
+- Steps  
+  1. Choose new basis vectors and form matrix P with these vectors as columns.  
+  2. Compute the inverse P^-1.  
+  3. Compute the new matrix: A_new = P^-1 * A * P.  
+
+---
+
+## 6: STUDY NOTES – MUST REMEMBER  
+
+### CRITICAL (Memorize exactly)  
+- **Eigenvalue equation**: A*v = lambda*v  
+- **Characteristic equation**: det(A - lambda*I) = 0  
+- **Diagonalization formula**: P^-1 * A * P = D  
+- **Power of diagonal matrix**: D^n = diag(lambda1^n, lambda2^n, …)  
+
+### VERY IMPORTANT (Know deeply)  
+- Eigenvectors are non‑zero solutions of (A - lambda*I)*v = 0.  
+- A matrix is diagonalizable iff it has n independent eigenvectors in n‑dimensional space.  
+- The determinant of (A - lambda*I) being zero means the matrix is singular, i.e., it squishes space into a lower dimension.  
+
+### IMPORTANT (Understand well)  
+- A rotation matrix has eigenvalue 1 (axis of rotation) and complex eigenvalues for other directions.  
+- A shear matrix has only one eigenvalue (1) and a single eigenvector (the fixed line).  
+- A scaling matrix has a single eigenvalue equal to the scaling factor; every vector is an eigenvector.  
+
+### Common Misconceptions  
+- **Eigenvectors are always orthogonal** – false; orthogonality only holds for symmetric matrices.  
+- **Every matrix has real eigenvalues** – false; rotations produce complex eigenvalues.  
+- **Zero vector is an eigenvector** – false; eigenvectors must be non‑zero.  
+
+### Special Cases & Exceptions  
+- **Repeated eigenvalues**: May or may not have enough independent eigenvectors; check the geometric multiplicity.  
+- **Complex eigenvalues**: Indicate no real eigenvectors; still useful for analyzing rotations.  
+- **Non‑diagonalizable matrices**: Cannot be fully simplified via eigenbasis; may require Jordan form.  
+
+---
