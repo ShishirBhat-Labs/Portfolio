@@ -18,6 +18,10 @@ Now I can watch a video, generate notes in seconds, and spend my study time actu
   <img src=".images/welcome_screen.png" alt="Welcome screen" />
 </p>
 
+- Check out the [Sample Notes](https://github.com/ShishirBhat-Labs/Portfolio/blob/main/AI-Powered%20YouTube%20Study%20Notes%20Generator/Sample_notes.txt) generated for this [Video](https://www.youtube.com/watch?v=PFDu9oVAE-g&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=18) from 3Blue1Brown on EigenVectors and EigenValues
+
+---
+
 ## Quick Start
 
 ### Prerequisites
@@ -90,6 +94,7 @@ Now I can watch a video, generate notes in seconds, and spend my study time actu
 **Structured Output**
 - Consistent, academic formatting
 - Easy to follow and comprehensive coverage
+
 
 ---
 
