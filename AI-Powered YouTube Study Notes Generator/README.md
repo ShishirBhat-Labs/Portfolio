@@ -83,7 +83,7 @@ Now I can watch a video, generate notes in seconds, and spend my study time actu
 - Download as Markdown (.md)
 - Download as Plain Text (.txt)
 
-**Beautiful Formula Rendering**
+**Formula Rendering**
 - Automatic conversion of plain text formulas to LaTeX
 - Professional mathematical expression display
 
@@ -97,32 +97,17 @@ Now I can watch a video, generate notes in seconds, and spend my study time actu
 
 
 ---
+## Tech Stack
 
-## Skills & Technologies Used
-
-**Backend & APIs**
-- Python 3
-- Streamlit (Web framework)
-- Groq API (AI model: gpt-oss-20b)
-- YouTube Transcript API
-
-**Frontend & Rendering**
-- Streamlit UI components
-- Custom CSS styling
-- LaTeX formula rendering
-- Markdown processing
-
-**Software Engineering**
-- Error handling & validation
-- API integration
-- Regex pattern matching
-- String processing
-- Code documentation
-
-**Other**
-- REST API calls with requests library
-- Environment secrets management
-- Git & GitHub
+| Component | Role | Function |
+|-----------|------|----------|
+| **Streamlit** | Frontend | Renders UI, buttons, spinners, download options |
+| **YouTube API** | Data Source | Extracts video transcripts |
+| **Groq API** | AI Engine | Generates structured notes from transcripts |
+| **Regex** | Text Processing | Extracts video IDs from URLs |
+| **LaTeX** | Rendering | Makes formulas look professional |
+| **Markdown** | Formatting | Structures notes (headers, bullets, tables) |
+| **Python** | Language | Orchestrates everything |
 
 ---
 
@@ -133,6 +118,55 @@ Now I can watch a video, generate notes in seconds, and spend my study time actu
 3. **Generate** → AI creates comprehensive study notes
 4. **Beautify** → Converts formulas to LaTeX for professional display
 5. **Export** → Download in your preferred format
+
+```
+┌─────────────────────────────────────────────────────┐
+│ 1. USER ENTERS URL                                  │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 2. EXTRACT VIDEO ID (regex)                         │
+│    youtube.com/watch?v=XXX → XXX                    │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 3. FETCH TRANSCRIPT (YouTube API)                   │
+│    Video ID → Transcript (50k characters)           │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 4. SEND TO AI (Groq API)                            │
+│    Transcript + Instructions → LLM                  │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 5. GENERATE NOTES (gpt-oss-20b)                     │
+│    LLM generates structured notes (8k tokens)       │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 6. PARSE RESPONSE (JSON)                            │
+│    API response → Extract note content              │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 7. BEAUTIFY FORMULAS                                │
+│    "lambda" → "\lambda" (LaTeX conversion)          │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 8. RENDER IN STREAMLIT                              │
+│    - Headers (st.markdown)                          │
+│    - Formulas (st.latex)                            │
+│    - Tables & text (st.markdown)                    │
+└──────────────────┬──────────────────────────────────┘
+                   │
+┌──────────────────▼──────────────────────────────────┐
+│ 9. DISPLAY DOWNLOAD BUTTONS                         │
+│    Markdown (.md) | Plain Text (.txt)               │
+└─────────────────────────────────────────────────────┘
+
+```
 
 ---
 
