@@ -311,6 +311,6 @@ with right:
 # ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div style="text-align:center;padding:32px 0 16px;color:#a0aec0;font-size:0.78rem;">
-    Powered by Gradient Boosting · Trained on 986 insurance records · For educational purposes only
+    Powered by Gradient Boosting · Trained on 986 insurance records
 </div>
 """, unsafe_allow_html=True)
