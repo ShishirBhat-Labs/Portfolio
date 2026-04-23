@@ -2,6 +2,10 @@ import streamlit as st
 import pickle
 import numpy as np
 import pandas as pd
+import os
+
+# ── Absolute path fix for Streamlit Cloud ──────────────────────────────────────
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 # ── Page config ────────────────────────────────────────────────────────────────
 st.set_page_config(
@@ -16,7 +20,6 @@ st.markdown("""
 <style>
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
 
-/* Base */
 html, body, [class*="css"] {
     font-family: 'DM Sans', sans-serif;
 }
@@ -25,7 +28,6 @@ html, body, [class*="css"] {
     background: #f0f4f8;
 }
 
-/* Header */
 .hero {
     background: linear-gradient(135deg, #1a1f3c 0%, #2d3561 60%, #1e4d8c 100%);
     border-radius: 20px;
@@ -77,7 +79,6 @@ html, body, [class*="css"] {
     border: 1px solid rgba(255,255,255,0.15);
 }
 
-/* Section cards */
 .section-card {
     background: #ffffff;
     border-radius: 16px;
@@ -104,7 +105,6 @@ html, body, [class*="css"] {
     background: #e8ecf0;
 }
 
-/* Result card */
 .result-card {
     background: linear-gradient(135deg, #1a1f3c 0%, #1e4d8c 100%);
     border-radius: 20px;
@@ -144,7 +144,6 @@ html, body, [class*="css"] {
     font-weight: 500;
 }
 
-/* Risk badge */
 .risk-pill {
     display: inline-block;
     border-radius: 20px;
@@ -157,7 +156,6 @@ html, body, [class*="css"] {
 .risk-medium { background: #fff3cd; color: #856404; }
 .risk-high   { background: #fde8e8; color: #c0392b; }
 
-/* Feature importance bar */
 .fi-row {
     display: flex;
     align-items: center;
@@ -191,10 +189,9 @@ html, body, [class*="css"] {
     flex-shrink: 0;
 }
 
-/* Streamlit overrides */
 div[data-testid="stSlider"] > div { padding-top: 4px; }
-.stSelectbox label, .stSlider label, .stRadio label { 
-    font-size: 0.85rem !important; 
+.stSelectbox label, .stSlider label, .stRadio label {
+    font-size: 0.85rem !important;
     font-weight: 500 !important;
     color: #2d3748 !important;
 }
@@ -222,17 +219,17 @@ div[data-testid="stButton"] button:hover {
 # ── Load models ────────────────────────────────────────────────────────────────
 @st.cache_resource
 def load_artifacts():
-    with open('insurance_model.pkl', 'rb') as f:
+    with open(os.path.join(BASE_DIR, 'insurance_model.pkl'), 'rb') as f:
         model = pickle.load(f)
-    with open('model.pkl', 'rb') as f:          # scaler saved as model.pkl
+    with open(os.path.join(BASE_DIR, 'model.pkl'), 'rb') as f:
         scaler = pickle.load(f)
-    with open('feature_cols.pkl', 'rb') as f:
+    with open(os.path.join(BASE_DIR, 'feature_cols.pkl'), 'rb') as f:
         feature_cols = pickle.load(f)
     return model, scaler, feature_cols
 
 model, scaler, feature_cols = load_artifacts()
 
-# Feature importances from your GBM output
+# ── Feature importances ────────────────────────────────────────────────────────
 FEATURE_IMPORTANCE = {
     'Age': 0.6115,
     'AnyTransplants': 0.0821,
@@ -257,7 +254,7 @@ def compute_features(age, height, weight, diabetes, bp, transplants,
     bmi = weight / ((height / 100) ** 2)
     risk_score = (diabetes + bp + transplants + chronic +
                   allergies + cancer_hist + surgeries)
-    age_x_chronic   = age * chronic
+    age_x_chronic    = age * chronic
     age_x_transplant = age * transplants
     return {
         'Age': age, 'Diabetes': diabetes, 'BloodPressureProblems': bp,
@@ -288,9 +285,7 @@ def get_premium_band(premium):
         return "🔴 Premium Band  (₹35k – ₹40k)"
 
 
-# ── UI ─────────────────────────────────────────────────────────────────────────
-
-# Hero
+# ── Hero ───────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
     <div class="hero-badge">🏥 ML-Powered · Gradient Boosting</div>
@@ -299,12 +294,12 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# ── Layout: inputs left, result right ─────────────────────────────────────────
+# ── Layout ─────────────────────────────────────────────────────────────────────
 left, right = st.columns([1.6, 1], gap="large")
 
 with left:
 
-    # ── Section 1: Demographics ──────────────────────────────────────────────
+    # Demographics
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">👤 Demographics</div>', unsafe_allow_html=True)
 
@@ -316,7 +311,6 @@ with left:
     with c3:
         weight = st.slider("Weight (kg)", min_value=51, max_value=132, value=70, step=1)
 
-    # Live BMI display
     bmi_val = weight / ((height / 100) ** 2)
     if bmi_val < 18.5:
         bmi_cat, bmi_col = "Underweight", "#3498db"
@@ -334,23 +328,23 @@ with left:
     )
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Section 2: Health Conditions ────────────────────────────────────────
+    # Health Conditions
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">🩺 Health Conditions</div>', unsafe_allow_html=True)
 
     c4, c5 = st.columns(2)
     with c4:
-        diabetes   = st.radio("Diabetes",               ["No", "Yes"], horizontal=True)
-        bp         = st.radio("Blood Pressure Problems", ["No", "Yes"], horizontal=True)
-        transplants = st.radio("Any Transplants",        ["No", "Yes"], horizontal=True)
+        diabetes    = st.radio("Diabetes",                ["No", "Yes"], horizontal=True)
+        bp          = st.radio("Blood Pressure Problems", ["No", "Yes"], horizontal=True)
+        transplants = st.radio("Any Transplants",         ["No", "Yes"], horizontal=True)
     with c5:
-        chronic    = st.radio("Any Chronic Diseases",    ["No", "Yes"], horizontal=True)
-        allergies  = st.radio("Known Allergies",         ["No", "Yes"], horizontal=True)
-        cancer_hist = st.radio("Family History of Cancer", ["No", "Yes"], horizontal=True)
+        chronic     = st.radio("Any Chronic Diseases",    ["No", "Yes"], horizontal=True)
+        allergies   = st.radio("Known Allergies",         ["No", "Yes"], horizontal=True)
+        cancer_hist = st.radio("Family History of Cancer",["No", "Yes"], horizontal=True)
 
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Section 3: Surgical History ─────────────────────────────────────────
+    # Surgical History
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">🔬 Surgical History</div>', unsafe_allow_html=True)
 
@@ -362,14 +356,12 @@ with left:
     )
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Predict button ───────────────────────────────────────────────────────
-    predict_btn = st.button("Calculate Premium Estimate →")
+    st.button("Calculate Premium Estimate →")
 
 
-# ── Right column: result ───────────────────────────────────────────────────────
+# ── Result column ──────────────────────────────────────────────────────────────
 with right:
 
-    # Convert radio to binary
     d  = 1 if diabetes    == "Yes" else 0
     b  = 1 if bp          == "Yes" else 0
     t  = 1 if transplants == "Yes" else 0
@@ -377,36 +369,34 @@ with right:
     al = 1 if allergies   == "Yes" else 0
     ca = 1 if cancer_hist == "Yes" else 0
 
-    feats = compute_features(age, height, weight, d, b, t, ch, al, ca, surgeries)
-    input_df = pd.DataFrame([feats])[feature_cols]
-    input_scaled = scaler.transform(input_df)
-    predicted = model.predict(input_df)[0]          # GBM doesn't need scaled input
-    predicted = max(15000, min(40000, round(predicted, -2)))   # clamp to valid range
+    feats     = compute_features(age, height, weight, d, b, t, ch, al, ca, surgeries)
+    input_df  = pd.DataFrame([feats])[feature_cols]
+    predicted = model.predict(input_df)[0]
+    predicted = max(15000, min(40000, round(predicted, -2)))
 
     risk_label, risk_class = get_risk_label(feats['RiskScore'])
     band = get_premium_band(predicted)
 
-    if predict_btn or True:   # show result always, updates live with sliders
-        st.markdown(f"""
-        <div class="result-card">
-            <div class="result-label">Estimated Annual Premium</div>
-            <div class="result-amount">₹{predicted:,.0f}</div>
-            <div class="result-range">Prediction range: ₹{max(15000, predicted-2000):,.0f} – ₹{min(40000, predicted+2000):,.0f}</div>
-            <div class="result-band">{band}</div>
-            <br/>
-            <span class="risk-pill {risk_class}">{risk_label}</span>
-        </div>
-        """, unsafe_allow_html=True)
+    st.markdown(f"""
+    <div class="result-card">
+        <div class="result-label">Estimated Annual Premium</div>
+        <div class="result-amount">₹{predicted:,.0f}</div>
+        <div class="result-range">Prediction range: ₹{max(15000, predicted-2000):,.0f} – ₹{min(40000, predicted+2000):,.0f}</div>
+        <div class="result-band">{band}</div>
+        <br/>
+        <span class="risk-pill {risk_class}">{risk_label}</span>
+    </div>
+    """, unsafe_allow_html=True)
 
-    # ── Profile summary ──────────────────────────────────────────────────────
+    # Profile summary
     st.markdown('<div class="section-card" style="margin-top:20px;">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">📋 Profile Summary</div>', unsafe_allow_html=True)
 
     summary_data = {
-        "Age": f"{age} yrs",
-        "BMI": f"{bmi_val:.1f} ({bmi_cat})",
-        "Risk Score": f"{feats['RiskScore']} / 9",
-        "Surgeries": surgeries,
+        "Age":               f"{age} yrs",
+        "BMI":               f"{bmi_val:.1f} ({bmi_cat})",
+        "Risk Score":        f"{feats['RiskScore']} / 9",
+        "Surgeries":         surgeries,
         "Active Conditions": sum([d, b, t, ch, al, ca])
     }
     for k, v in summary_data.items():
@@ -419,7 +409,7 @@ with right:
         )
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Feature importance bars ──────────────────────────────────────────────
+    # Feature importance bars
     st.markdown('<div class="section-card">', unsafe_allow_html=True)
     st.markdown('<div class="section-label">📊 Key Premium Drivers</div>', unsafe_allow_html=True)
 
@@ -428,7 +418,7 @@ with right:
 
     bars_html = ""
     for feat, imp in top_features:
-        pct = imp / max_imp * 100
+        pct   = imp / max_imp * 100
         label = feat.replace('_x_', ' × ').replace('_', ' ')
         bars_html += f"""
         <div class="fi-row">
