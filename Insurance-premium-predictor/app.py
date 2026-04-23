@@ -128,7 +128,7 @@ div[data-testid="stButton"] button {
     color: white !important; border: none !important;
     border-radius: 12px !important; padding: 14px 0 !important;
     font-size: 1rem !important; font-weight: 600 !important;
-    width: 100% !important;
+    width: 120% !important;
     box-shadow: 0 4px 16px rgba(30,77,140,0.3) !important;
 }
 </style>
