@@ -61,7 +61,7 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     border: 1px solid #e8ecf0;
 }
 .card-title {
-    font-size: 0.85rem;
+    font-size: 0.95rem;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
