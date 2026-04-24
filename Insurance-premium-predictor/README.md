@@ -8,9 +8,10 @@ A machine learning project that predicts individual health insurance premium pri
 
 | | |
 |---|---|
-| Tableau Dashboard | [View](#) |
-| Live App | [Open](#) |
-| Technical Blog | [Read](#) |
+| Tableau Dashboard - overview | [View](https://public.tableau.com/views/InsuranceCostPredictionOverview/Overview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
+| Tableau Dashboard - Risk and demographics | [View](https://public.tableau.com/views/InsuranceCostPredictionOverview/Overview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
+| Live App | [Open](https://portfolio-insurance-premium-predictor.streamlit.app/) |
+| Technical Blog | [Read](https://medium.com/@shishir.r.bhat/predicting-health-insurance-premiums-with-machine-learning-an-end-to-end-data-science-project-3feaf7069108) |
 | Demo Video | [Watch](#) |
 
 ---
