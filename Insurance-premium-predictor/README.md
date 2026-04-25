@@ -8,9 +8,10 @@ A machine learning project that predicts individual health insurance premium pri
 
 | | |
 |---|---|
-| Tableau Dashboard | [View](#) |
-| Live App | [Open](#) |
-| Technical Blog | [Read](#) |
+| Tableau Dashboard - Overview | [View](https://public.tableau.com/views/InsuranceCostPredictionOverview/Overview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
+| Tableau Dashboard - Risk and Demographics | [View](https://public.tableau.com/views/InsuranceCostPrediction-Riskanddemographics/Riskanddemographics?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
+| Live App | [Open](https://portfolio-insurance-premium-predictor.streamlit.app/) |
+| Technical Blog | [Read](https://medium.com/@shishir.r.bhat/predicting-health-insurance-premiums-with-machine-learning-an-end-to-end-data-science-project-3feaf7069108) |
 | Demo Video | [Watch](#) |
 
 ---
@@ -133,7 +134,6 @@ insurance-premium-predictor/
 ├── insurance_model.pkl      ← Random Forest model
 ├── model.pkl                ← StandardScaler
 ├── feature_cols.pkl         ← Feature column order
-├── insurance.csv
 └── Insurance_Cost_EDA_ML.ipynb
 ```
 
@@ -145,4 +145,3 @@ Python · Pandas · Scikit-learn · Streamlit · Tableau · Google Colab
 
 ---
 
-**[Your Name]** · [LinkedIn](#) · [GitHub](#)
