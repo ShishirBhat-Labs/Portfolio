@@ -8,10 +8,9 @@ A machine learning project that predicts individual health insurance premium pri
 
 | | |
 |---|---|
-| Tableau Dashboard - overview | [View](https://public.tableau.com/views/InsuranceCostPredictionOverview/Overview?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
-| Tableau Dashboard - Risk and demographics | [View](https://public.tableau.com/views/InsuranceCostPrediction-Riskanddemographics/Riskanddemographics?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
-| Live App | [Open](https://portfolio-insurance-premium-predictor.streamlit.app/) |
-| Technical Blog | [Read](https://medium.com/@shishir.r.bhat/predicting-health-insurance-premiums-with-machine-learning-an-end-to-end-data-science-project-3feaf7069108) |
+| Tableau Dashboard | [View](#) |
+| Live App | [Open](#) |
+| Technical Blog | [Read](#) |
 | Demo Video | [Watch](#) |
 
 ---
@@ -47,42 +46,68 @@ Insurance companies often rely on broad averages to set premiums, which can lead
 
 **Exploratory Data Analysis**
 - Analysed distributions of all health features and the target variable
-- Found that premium price takes discrete banded values rather than being truly continuous — a key insight that shaped modelling decisions
-- Identified that transplant patients almost exclusively fall in the highest premium band (₹35k–₹40k)
+- Key discovery: PremiumPrice takes only 24 discrete values (₹15,000 to ₹40,000) — it is banded, not continuous. This shaped every modelling decision downstream
+- Transplant patients cluster almost exclusively in the ₹35k–₹40k premium band
+- Age group 56–66 consistently pays the highest average premiums across all health conditions
 
 **Hypothesis Testing**
-- Confirmed that chronic diseases, transplants, diabetes, and surgery count all lead to statistically significantly higher premiums (T-tests and ANOVA, p < 0.05)
-- Found a significant association between diabetes and blood pressure problems (Chi-Square test)
+- H1: Chronic diseases → higher premiums — T-test confirmed (p < 0.0001)
+- H2: Transplants → higher premiums — T-test confirmed, strongest effect (avg ₹31,764 vs ₹23,898, p < 0.0001)
+- H3: Surgery count → premium differences — One-way ANOVA confirmed (p < 0.0001)
+- H4: Diabetes ↔ Blood Pressure association — Chi-Square confirmed (p < 0.0001)
+- H5: Diabetes → higher premiums — T-test confirmed (p = 0.0167)
 
 **Feature Engineering**
-- Derived BMI from height and weight
-- Created an aggregate risk score from all binary health flags
-- Added interaction terms: Age × Chronic Disease and Age × Transplant
+- `BMI` — derived from height and weight (mean 27.46, WHO categories applied)
+- `RiskScore` — sum of all 6 binary health flags + surgery count (0–9 scale)
+- `Age_x_Chronic` — interaction term: Age × AnyChronicDiseases
+- `Age_x_Transplant` — interaction term: Age × AnyTransplants
 
-**Modelling**
-Trained and compared six models — Linear Regression, Ridge, Lasso, Decision Tree, Random Forest, and Gradient Boosting. Gradient Boosting performed best.
+**Outlier Handling**
+- Weight (16 outliers) and BMI (22 outliers) retained — genuine high-BMI individuals, not errors
+- PremiumPrice high-band values retained — legitimate pricing tiers
+- BMI capped at 99th percentile (44.23) for linear model robustness
+- No rows removed
 
-| Model | R² |
-|---|---|
-| Linear Regression | ~0.58 |
-| Decision Tree | ~0.80 |
-| Random Forest | ~0.88 |
-| **Gradient Boosting** | **~0.92** |
+**Modelling — Final Results**
 
-> Update with your exact scores from the notebook.
+| Model | MAE | RMSE | R² |
+|---|---|---|---|
+| Linear Regression | ₹2,603 | ₹3,484 | 0.7154 |
+| Ridge Regression | ₹2,603 | ₹3,495 | 0.7135 |
+| Lasso Regression | ₹2,641 | ₹3,558 | 0.7031 |
+| Decision Tree | ₹1,282 | ₹2,510 | 0.8522 |
+| Gradient Boosting | ₹1,381 | ₹2,384 | 0.8667 |
+| **Random Forest** | **₹982** | **₹2,073** | **0.8993** |
 
-Top features driving premium predictions:
+**Best model: Random Forest Regressor**
+- 5-fold cross-validation mean R²: 0.7795 (std dev: 0.0837)
+- Tree-based models significantly outperformed linear models due to the discrete banded nature of PremiumPrice
+
+**Feature Importance (Random Forest)**
 
 | Feature | Importance |
 |---|---|
-| Age | 61.2% |
-| Any Transplants | 8.2% |
-| Weight | 7.3% |
-| BMI | 6.2% |
-| Number of Surgeries | 3.3% |
+| Age | 60.4% |
+| Weight | 8.0% |
+| AnyTransplants | 7.4% |
+| BMI | 5.0% |
+| Age × Chronic (interaction) | 3.8% |
+| NumberOfMajorSurgeries | 3.3% |
+| HistoryOfCancerInFamily | 2.0% |
 
 **Deployment**
-Trained model deployed as a Streamlit web app where users can input their health details and get an instant premium estimate with a risk classification.
+Trained Random Forest model deployed as a Streamlit web app with live premium prediction, BMI auto-calculation, premium band classification, risk score badge, and feature importance visualisation.
+
+---
+
+## Business Recommendations
+
+1. **Transplant + surgery combinations** should go straight to specialist underwriting — the model consistently places these profiles in the ₹35k–₹40k band
+2. **Age-based tiering is underutilised** — the 56–66 cohort warrants a dedicated pricing tier; grouping them with younger individuals underestimates risk
+3. **Interaction features matter** — the impact of chronic diseases and transplants is compounded by age. Pricing models that ignore this will systematically underprice older high-risk clients
+4. **BMI-based wellness incentives** — Weight and BMI are top predictors. Healthy BMI discounts could reduce long-term liability while attracting lower-risk customers
+5. **Real-time quoting API** — the Random Forest model can be deployed as an agent-facing API for instant premium estimates during intake
 
 ---
 
@@ -90,7 +115,7 @@ Trained model deployed as a Streamlit web app where users can input their health
 
 ```bash
 git clone https://github.com/yourusername/portfolio.git
-cd portfolio/insurance-cost-prediction
+cd portfolio/insurance-premium-predictor
 
 pip install -r requirements.txt
 
@@ -102,12 +127,12 @@ streamlit run app.py
 ## Files
 
 ```
-insurance-cost-prediction/
+insurance-premium-predictor/
 ├── app.py
 ├── requirements.txt
-├── insurance_model.pkl
-├── model.pkl
-├── feature_cols.pkl
+├── insurance_model.pkl      ← Random Forest model
+├── model.pkl                ← StandardScaler
+├── feature_cols.pkl         ← Feature column order
 ├── insurance.csv
 └── Insurance_Cost_EDA_ML.ipynb
 ```
@@ -119,3 +144,5 @@ insurance-cost-prediction/
 Python · Pandas · Scikit-learn · Streamlit · Tableau · Google Colab
 
 ---
+
+**[Your Name]** · [LinkedIn](#) · [GitHub](#)

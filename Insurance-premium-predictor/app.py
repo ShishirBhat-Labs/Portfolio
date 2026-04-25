@@ -18,7 +18,6 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap');
 
 html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
-
 .stApp { background: #f0f4f8; }
 
 .hero {
@@ -51,7 +50,6 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     border: 1px solid rgba(255,255,255,0.15);
 }
 
-/* Card wrapper — wraps both the label and the widgets */
 .card-wrap {
     background: #ffffff;
     border-radius: 16px;
@@ -61,9 +59,9 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
     border: 1px solid #e8ecf0;
 }
 .card-title {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     font-weight: 700;
-    letter-spacing: 2px;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
     color: #1e4d8c;
     margin-bottom: 16px;
@@ -115,7 +113,6 @@ html, body, [class*="css"] { font-family: 'DM Sans', sans-serif; }
 .fi-bar-fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #1e4d8c, #4a90d9); }
 .fi-pct { font-size: 0.75rem; color: #718096; width: 38px; text-align: right; flex-shrink: 0; }
 
-/* Streamlit widget label override */
 [data-testid="stSlider"] label,
 [data-testid="stRadio"] label,
 [data-testid="stSelectSlider"] label {
@@ -128,7 +125,7 @@ div[data-testid="stButton"] button {
     color: white !important; border: none !important;
     border-radius: 12px !important; padding: 14px 0 !important;
     font-size: 1rem !important; font-weight: 600 !important;
-    width: 120% !important;
+    width: 100% !important;
     box-shadow: 0 4px 16px rgba(30,77,140,0.3) !important;
 }
 </style>
@@ -148,12 +145,21 @@ def load_artifacts():
 
 model, scaler, feature_cols = load_artifacts()
 
+# Feature importances — Random Forest (best model from notebook)
 FEATURE_IMPORTANCE = {
-    'Age': 0.6115, 'AnyTransplants': 0.0821, 'Weight': 0.0727,
-    'BMI': 0.0621, 'Age_x_Chronic': 0.0370, 'NumberOfMajorSurgeries': 0.0330,
-    'Age_x_Transplant': 0.0210, 'Height': 0.0204, 'AnyChronicDiseases': 0.0132,
-    'RiskScore': 0.0118, 'BloodPressureProblems': 0.0069,
-    'KnownAllergies': 0.0033, 'Diabetes': 0.0021, 'HistoryOfCancerInFamily': 0.0020,
+    'Age': 0.6038,
+    'Weight': 0.0798,
+    'AnyTransplants': 0.0744,
+    'BMI': 0.0502,
+    'Age_x_Chronic': 0.0382,
+    'NumberOfMajorSurgeries': 0.0325,
+    'HistoryOfCancerInFamily': 0.0204,
+    'Height': 0.0163,
+    'RiskScore': 0.0134,
+    'AnyChronicDiseases': 0.0130,
+    'BloodPressureProblems': 0.0086,
+    'Diabetes': 0.0049,
+    'KnownAllergies': 0.0030,
 }
 
 
@@ -186,7 +192,7 @@ def get_premium_band(premium):
 # ── Hero ───────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div class="hero">
-    <div class="hero-badge">🏥 ML-Powered · Gradient Boosting</div>
+    <div class="hero-badge">🏥 ML-Powered · Random Forest</div>
     <div class="hero-title">Insurance Premium Calculator</div>
     <p class="hero-sub">Enter individual health profile details to estimate annual insurance premium cost</p>
 </div>
@@ -196,7 +202,6 @@ left, right = st.columns([1.6, 1], gap="large")
 
 with left:
 
-    # ── Demographics card ──────────────────────────────────────────────────────
     st.markdown('<div class="card-wrap"><div class="card-title">👤 &nbsp;Demographics</div>', unsafe_allow_html=True)
     c1, c2, c3 = st.columns(3)
     with c1:
@@ -219,7 +224,6 @@ with left:
         unsafe_allow_html=True
     )
 
-    # ── Health Conditions card ─────────────────────────────────────────────────
     st.markdown('<div class="card-wrap"><div class="card-title">🩺 &nbsp;Health Conditions</div>', unsafe_allow_html=True)
     c4, c5 = st.columns(2)
     with c4:
@@ -232,7 +236,6 @@ with left:
         cancer_hist = st.radio("Family History of Cancer",["No", "Yes"], horizontal=True)
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # ── Surgical History card ──────────────────────────────────────────────────
     st.markdown('<div class="card-wrap"><div class="card-title">🔬 &nbsp;Surgical History</div>', unsafe_allow_html=True)
     surgeries = st.select_slider(
         "Number of Major Surgeries",
@@ -245,7 +248,6 @@ with left:
     st.button("Calculate Premium Estimate →")
 
 
-# ── Right column ───────────────────────────────────────────────────────────────
 with right:
 
     d  = 1 if diabetes    == "Yes" else 0
@@ -263,7 +265,6 @@ with right:
     risk_label, risk_class = get_risk_label(feats['RiskScore'])
     band = get_premium_band(predicted)
 
-    # Result card
     st.markdown(f"""
     <div class="result-card">
         <div class="result-label">Estimated Annual Premium</div>
@@ -274,7 +275,6 @@ with right:
     </div>
     """, unsafe_allow_html=True)
 
-    # Profile summary card
     st.markdown('<div class="card-wrap" style="margin-top:20px;"><div class="card-title">📋 &nbsp;Profile Summary</div>', unsafe_allow_html=True)
     summary = {
         "Age":               f"{age} yrs",
@@ -290,7 +290,6 @@ with right:
     )
     st.markdown(rows_html + '</div>', unsafe_allow_html=True)
 
-    # Feature importance card
     st.markdown('<div class="card-wrap"><div class="card-title">📊 &nbsp;Key Premium Drivers</div>', unsafe_allow_html=True)
     top_features = sorted(FEATURE_IMPORTANCE.items(), key=lambda x: x[1], reverse=True)[:7]
     max_imp = top_features[0][1]
@@ -308,9 +307,8 @@ with right:
     st.markdown(bars_html + '</div>', unsafe_allow_html=True)
 
 
-# ── Footer ─────────────────────────────────────────────────────────────────────
 st.markdown("""
 <div style="text-align:center;padding:32px 0 16px;color:#a0aec0;font-size:0.78rem;">
-    Powered by Gradient Boosting · Trained on 986 insurance records
+    Powered by Random Forest · Trained on 986 insurance records · For educational purposes only
 </div>
 """, unsafe_allow_html=True)
