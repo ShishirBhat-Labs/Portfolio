@@ -12,7 +12,7 @@ A machine learning project that predicts individual health insurance premium pri
 | Tableau Dashboard - Risk and Demographics | [View](https://public.tableau.com/views/InsuranceCostPrediction-Riskanddemographics/Riskanddemographics?:language=en-US&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link) |
 | Live App | [Open](https://portfolio-insurance-premium-predictor.streamlit.app/) |
 | Technical Blog | [Read](https://medium.com/@shishir.r.bhat/predicting-health-insurance-premiums-with-machine-learning-an-end-to-end-data-science-project-3feaf7069108) |
-| Demo Video | [Watch](#) |
+| Demo Video | [Watch](https://www.loom.com/share/e6d11f976f074b8aa99864eca91aebea) |
 
 ---
 
